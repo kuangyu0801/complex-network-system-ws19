@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2019-12-05">
+    <creator>NetworkX 2.4</creator>
+  </meta>
+  <graph defaultedgetype="directed" mode="static" name="">
+    <attributes mode="static" class="edge">
+      <attribute id="0" title="networkx_key" type="long" />
+    </attributes>
+    <nodes>
+      <node id="Kei Nishikori" label="Kei Nishikori" />
+      <node id="Grigor Dimitrov" label="Grigor Dimitrov" />
+      <node id="Milos Raonic" label="Milos Raonic" />
+      <node id="Stan Wawrinka" label="Stan Wawrinka" />
+      <node id="Rafael Nadal" label="Rafael Nadal" />
+      <node id="Kyle Edmund" label="Kyle Edmund" />
+    </nodes>
+    <edges>
+      <edge source="Kei Nishikori" target="Grigor Dimitrov" id="0">
+        <attvalues>
+          <attvalue for="0" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="Milos Raonic" target="Grigor Dimitrov" id="1">
+        <attvalues>
+          <attvalue for="0" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="Stan Wawrinka" target="Kei Nishikori" id="2">
+        <attvalues>
+          <attvalue for="0" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="Rafael Nadal" target="Milos Raonic" id="3">
+        <attvalues>
+          <attvalue for="0" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="Kyle Edmund" target="Stan Wawrinka" id="4">
+        <attvalues>
+          <attvalue for="0" value="0" />
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

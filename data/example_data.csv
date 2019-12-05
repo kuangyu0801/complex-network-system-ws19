@@ -1,0 +1,6 @@
+﻿tourney_year_id,tourney_order,tourney_slug,tourney_url_suffix,tourney_round_name,round_order,match_order,winner_name,winner_player_id,winner_slug,loser_name
+2017-339,1,brisbane,/en/scores/archive/brisbane/339/2017/results,Finals,1,1,Grigor Dimitrov,d875,grigor-dimitrov,Kei Nishikori
+2017-339,1,brisbane,/en/scores/archive/brisbane/339/2017/results,Semi-Finals,2,1,Grigor Dimitrov,d875,grigor-dimitrov,Milos Raonic
+2017-339,1,brisbane,/en/scores/archive/brisbane/339/2017/results,Semi-Finals,2,2,Kei Nishikori,n552,kei-nishikori,Stan Wawrinka
+2017-339,1,brisbane,/en/scores/archive/brisbane/339/2017/results,Quarter-Finals,3,1,Milos Raonic,r975,milos-raonic,Rafael Nadal
+2017-339,1,brisbane,/en/scores/archive/brisbane/339/2017/results,Quarter-Finals,3,2,Stan Wawrinka,w367,stan-wawrinka,Kyle Edmund
