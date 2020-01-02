@@ -23,7 +23,7 @@ with open(input_file_name, newline='') as inputFile, open(output_file_name, 'w',
     print(row)
     print(len(row))
     i = i + 1
-    write_File.writerow([row[10],row[7]]) #loser to winner
+    write_File.writerow([row[12].upper(),row[9].upper()]) #loser to winner
 
 print('========['+fTag+'] RESULT: SUCCESS========')
 print('Input File Name: ' + input_file_name)
