@@ -27,7 +27,7 @@ g_radius = nx.radius(G)
 g_avg_path_len = nx.average_shortest_path_length(G)
 
 # average clustering coefficient
-d_cluster = nx.clustering(G) # return a floating dictionary
+d_cluster = nx.clustering(G)  # return a floating dictionary
 sum_cluster = 0
 for value in d_cluster.values():
     sum_cluster = sum_cluster + value
@@ -57,7 +57,7 @@ g_num_conn = nx.number_connected_components(G)
 with open(f_txt_out, 'w') as f:
     f.write('order: %d \n' % g_order)
     f.write('size: %d \n' % g_size)
-    f.write('density: %d \n' % g_dens)
+    f.write('density: %f \n' % g_dens)
     f.write('diameter:%d \n' % g_diameter)
     f.write('radius: %d \n' % g_radius)
     f.write('average path length: %f \n' % g_avg_path_len)
