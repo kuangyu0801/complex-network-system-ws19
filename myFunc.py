@@ -29,3 +29,15 @@ def my_min_degree(G):
     print('min_degree %d' % min_degree)
     print('%s has min_degree' % min_node)
     return min_degree
+
+def my_PrintFile(f_input_file_name, f_output_file_name):
+    print('Input File Name: ' + f_input_file_name)
+    print('Output File Name: ' + f_output_file_name)
+
+def my_PrintTag(tag_PR, tag_ALGO):
+    print('========[PR:' + tag_PR + '][ALGO:' + tag_ALGO + ']  RESULT: SUCCESS========')
+
+def my_topcsv(dict_in, f_out):
+
+
+
