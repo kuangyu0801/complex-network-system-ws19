@@ -7,7 +7,8 @@ tag_PR = '3a'
 tag_ALGO = 'harmonic centrality'
 fin_gexf = 'data/Graph_atp_match_2017.gexf'
 fout_top10_csv = 'output/harmonic_top10.csv'
-ftest = 'output/harmonic_top10_test.csv'
+fout_test = 'output/harmonic_top10_test.csv'
+fout_gexf = 'output/' +  tag_ALGO + '.gexf'
 
 dict_name = {}
 dict_order = {}
@@ -36,6 +37,7 @@ with open(fout_top10_csv, 'w', newline='') as outputFile:
         if value != x[1]:
             print('dictionary lookup error')
 
-my_dictop2csv(dict_harmo, ftest, tag_ALGO)
+my_dictop2csv(dict_harmo, fout_top10_csv, tag_ALGO)
+my_addattr2node(G, dict_harmo, fout_gexf, tag_ALGO)
 my_PrintFile(fin_gexf, fout_top10_csv)
 my_PrintTag(tag_PR, tag_ALGO)
