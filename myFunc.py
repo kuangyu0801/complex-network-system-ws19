@@ -59,7 +59,7 @@ def my_dict2csv(dict_original, f_out_csv):
 # this function takes an dictionary with node and metric value and store top 10 result in a csv
 
 
-def my_dictop2csv(dict_original, f_out_csv, en_reverse):
+def my_dicsort2csv(dict_original, f_out_csv, en_reverse, tag_ALGO):
     dict_name = {}
     dict_order = {}
     idx = 0
@@ -78,8 +78,15 @@ def my_dictop2csv(dict_original, f_out_csv, en_reverse):
             node = dict_name[x[0]]
             value = dict_original[node]
             write_file.writerow([node, value])
-            print('%s has harmonic %f :' % (node, value))
+            print('%s has %s  %f :' % (node, tag_ALGO , value))
             if value != x[1]:
                 print('dictionary lookup error')
     my_PrintOutFile(f_out_csv)
 
+
+def my_dictop2csv(dict_original, f_out_csv, tag_ALGO):
+    my_dicsort2csv(dict_original, f_out_csv, True, tag_ALGO)
+
+
+def my_dicleast2csv(dict_original, f_out_csv, tag_ALGO):
+    my_dicsort2csv(dict_original, f_out_csv, False, tag_ALGO)

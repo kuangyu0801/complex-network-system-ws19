@@ -36,6 +36,6 @@ with open(fout_top10_csv, 'w', newline='') as outputFile:
         if value != x[1]:
             print('dictionary lookup error')
 
-my_dictop2csv(dict_harmo, ftest, True)
+my_dictop2csv(dict_harmo, ftest, tag_ALGO)
 my_PrintFile(fin_gexf, fout_top10_csv)
 my_PrintTag(tag_PR, tag_ALGO)
