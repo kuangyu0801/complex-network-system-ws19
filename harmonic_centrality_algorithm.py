@@ -7,6 +7,7 @@ tag_PR = '3a'
 tag_ALGO = 'harmonic centrality'
 fin_gexf = 'data/Graph_atp_match_2017.gexf'
 fout_top10_csv = 'output/harmonic_top10.csv'
+ftest = 'output/harmonic_top10_test.csv'
 
 dict_name = {}
 dict_order = {}
@@ -26,23 +27,15 @@ list_harmo_sorted = sorted(dict_order.items(), key=lambda kv: (kv[1], kv[0]), re
 with open(fout_top10_csv, 'w', newline='') as outputFile:
 
     write_File = csv.writer(outputFile)
-    for i in range(0, 9):
-        x = list_harmo_sorted.pop(i)
-        print(x)
+    for i in range(0, 10):
+        x = list_harmo_sorted[i]
         node = dict_name[x[0]]
         value = dict_harmo[node]
         write_File.writerow([node, value])
         print('%s has harmonic %f :' % (node, value))
         if value != x[1]:
             print('dictionary lookup error')
-    if False:
-        for node in dict_harmo_sorted.keys():
-            count = count+1
-            value = round(dict_harmo_sorted[node], 3)
-            print('%s has harmonic %f :' % (node, value))
-            write_File.writerow([node, value])
-            if count == 9:
-                break
 
+my_dictop2csv(dict_harmo, ftest, True)
 my_PrintFile(fin_gexf, fout_top10_csv)
 my_PrintTag(tag_PR, tag_ALGO)
