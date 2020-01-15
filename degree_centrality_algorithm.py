@@ -6,6 +6,7 @@ fin_gexf = 'data/Graph_atp_match_2017.gexf'
 fout_top10_csv = 'output/degree_top10.csv'
 fout_gexf = 'output/' +  tag_ALGO + '.gexf'
 
+#TODO the degree centrality treats every edge as 1
 attrG = nx.Graph()
 G = nx.read_gexf(fin_gexf)
 dict_degree = nx.degree_centrality(G)
