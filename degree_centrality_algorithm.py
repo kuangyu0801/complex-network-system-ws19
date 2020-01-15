@@ -4,7 +4,7 @@ tag_PR = '3a'
 tag_ALGO = 'degree_centrality'
 fin_gexf = 'data/Graph_atp_match_2017.gexf'
 fout_top10_csv = 'output/degree_top10.csv'
-fout_gexf = 'output/' +  tag_ALGO + '.gexf'
+fout_gexf = 'output/gexf/' + tag_PR +'_'+  tag_ALGO + '.gexf'
 
 #TODO the degree centrality treats every edge as 1
 attrG = nx.Graph()

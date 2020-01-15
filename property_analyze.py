@@ -3,7 +3,7 @@ import networkx as nx
 # reading from a undirected graph
 f_input_gexf = 'data/Graph_atp_match_2017.gexf'
 f_txt_out = 'data/property.txt'
-#TODO: find out about degree, diameter, subgraph
+
 # for simplicity, I computed the graph with undirected graph
 
 G = nx.read_gexf(f_input_gexf)

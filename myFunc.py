@@ -1,5 +1,7 @@
 import networkx as nx
 import csv
+import numpy as np
+import matplotlib.pyplot as plt
 
 def my_max_degree(G):
     max_degree = 0
@@ -98,3 +100,38 @@ def my_addattr2node(G, dict_attribute, f_out_gexf, tag_ALGO):
         nG.nodes[node][tag_ALGO] = dict_attribute[node]
     nx.write_gexf(nG, f_out_gexf)
     return nG
+
+
+def my_plothist(list_in, tag_title, tag_x, tag_y):
+    # the histogram of the data
+    n, bins, patches = plt.hist(list_in, 40, density=True, facecolor='g', alpha=0.75)
+
+    plt.xlabel(tag_x)
+    plt.ylabel(tag_y)
+    plt.title(tag_title)
+    #plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
+    #plt.xlim(40, 160)
+    #plt.ylim(0, 0.03)
+    plt.grid(True)
+    plt.show()
+    return True
+
+def my_plothist_ex():
+    # Fixing random state for reproducibility
+    np.random.seed(19680801)
+
+    mu, sigma = 100, 15
+    x = mu + sigma * np.random.randn(10000)
+
+    # the histogram of the data
+    n, bins, patches = plt.hist(x, 50, density=True, facecolor='g', alpha=0.75)
+
+    plt.xlabel('Smarts')
+    plt.ylabel('Probability')
+    plt.title('Histogram of IQ')
+    plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
+    plt.xlim(40, 160)
+    plt.ylim(0, 0.03)
+    plt.grid(True)
+    plt.show()
+    return True
