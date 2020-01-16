@@ -116,6 +116,20 @@ def my_plothist(list_in, tag_title, tag_x, tag_y):
     plt.show()
     return True
 
+
+def my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y):
+
+    plt.plot(list_x, list_y, 'ro')
+
+    plt.xlabel(tag_x)
+    plt.ylabel(tag_y)
+    plt.title(tag_title)
+
+    plt.grid(True)
+    plt.show()
+    return True
+
+
 def my_plothist_ex():
     # Fixing random state for reproducibility
     np.random.seed(19680801)
@@ -125,11 +139,11 @@ def my_plothist_ex():
 
     # the histogram of the data
     n, bins, patches = plt.hist(x, 50, density=True, facecolor='g', alpha=0.75)
-
+    tag_avg = 10
     plt.xlabel('Smarts')
     plt.ylabel('Probability')
     plt.title('Histogram of IQ')
-    plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
+    #plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
     plt.xlim(40, 160)
     plt.ylim(0, 0.03)
     plt.grid(True)
