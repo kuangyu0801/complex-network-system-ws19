@@ -1,6 +1,8 @@
 import networkx as nx
 from myFunc import *
-tag_PR = '4a'
+from clustering_algorithm import *
+
+tag_PR = 'PR4a'
 tag_ALGO = 'random_graph'
 fin_gexf = 'data/Graph_atp_match_2017.gexf'
 #  fout_top10_csv = 'output/degree_top10.csv'
@@ -25,13 +27,15 @@ print(prob)
 #  gnp_random_graph(n, p, seed=None, directed=False)
 rG = nx.gnp_random_graph(node_size, prob, seed=None, directed=False)
 
-fout_gexf ='output/gexf/' + tag_PR +'_' +  tag_ALGO + '_prob_' + str(round(prob,3)) + '.gexf'
+fout_gexf = 'output/gexf/' + tag_PR +'_' +  tag_ALGO + '_prob_' + str(round(prob, 3)) + '.gexf'
 nx.write_gexf(rG, fout_gexf)
+
+my_clustering(fout_gexf, tag_PR)
 
 list_random = []
 for node in list(rG.nodes()):
     list_random.append(nx.degree(rG,node, weight='weight'))
 
-
-my_plothist(list_random, 'Degree Distribution:'+ tag_ALGO, 'Degree', 'Portion of node')
-my_plothist(list_degree, 'Degree Distribution:'+ 'original', 'Degree', 'Portion of node')
+#TODO how to figure out print 2 picture in seperate window
+my_plothist(list_random, 'Degree Distribution:' + tag_ALGO, 'Degree', 'Portion of node')
+my_plothist(list_degree, 'Degree Distribution:' + 'original', 'Degree', 'Portion of node')

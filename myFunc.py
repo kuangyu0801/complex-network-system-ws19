@@ -117,16 +117,20 @@ def my_plothist(list_in, tag_title, tag_x, tag_y):
     return True
 
 
-def my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y):
+def my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y, fout_jpg, en_loglog):
 
-    plt.plot(list_x, list_y, 'ro')
+    if en_loglog:
+        plt.loglog(list_x, list_y, 'ro')
+    else:
+        plt.plot(list_x, list_y, 'ro')
 
     plt.xlabel(tag_x)
     plt.ylabel(tag_y)
     plt.title(tag_title)
 
     plt.grid(True)
-    plt.show()
+    #plt.show()
+    plt.savefig(fout_jpg)
     return True
 
 
