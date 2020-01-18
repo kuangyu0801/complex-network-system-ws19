@@ -86,14 +86,17 @@ def my_dicsort2csv(dict_original, f_out_csv, en_reverse, tag_ALGO):
     my_PrintOutFile(f_out_csv)
 
 
+# print top 10 value to csv
 def my_dictop2csv(dict_original, f_out_csv, tag_ALGO):
     my_dicsort2csv(dict_original, f_out_csv, True, tag_ALGO)
 
 
+# print least 10 value to csv
 def my_dicleast2csv(dict_original, f_out_csv, tag_ALGO):
     my_dicsort2csv(dict_original, f_out_csv, False, tag_ALGO)
 
 
+# add attribute to node and return a node
 def my_addattr2node(G, dict_attribute, f_out_gexf, tag_ALGO):
     nG = G.copy()
     for node in dict_attribute.keys():
@@ -102,7 +105,8 @@ def my_addattr2node(G, dict_attribute, f_out_gexf, tag_ALGO):
     return nG
 
 
-def my_plothist(list_in, tag_title, tag_x, tag_y):
+# save histogram plot
+def my_plothist(list_in, tag_title, tag_x, tag_y, fout_png):
     # the histogram of the data
     n, bins, patches = plt.hist(list_in, 40, density=True, facecolor='g', alpha=0.75)
 
@@ -113,11 +117,13 @@ def my_plothist(list_in, tag_title, tag_x, tag_y):
     #plt.xlim(40, 160)
     #plt.ylim(0, 0.03)
     plt.grid(True)
-    plt.show()
+    #plt.show()
+    plt.savefig(fout_png)
     return True
 
 
-def my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y, fout_jpg, en_loglog):
+# save scatter plot with control flag en_log
+def my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y, fout_png, en_loglog):
 
     if en_loglog:
         plt.loglog(list_x, list_y, 'ro')
@@ -130,7 +136,7 @@ def my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y, fout_jpg, en_loglog)
 
     plt.grid(True)
     #plt.show()
-    plt.savefig(fout_jpg)
+    plt.savefig(fout_png)
     return True
 
 
@@ -144,10 +150,11 @@ def my_plothist_ex():
     # the histogram of the data
     n, bins, patches = plt.hist(x, 50, density=True, facecolor='g', alpha=0.75)
     tag_avg = 10
+    print(n)
     plt.xlabel('Smarts')
     plt.ylabel('Probability')
     plt.title('Histogram of IQ')
-    #plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
+    # plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
     plt.xlim(40, 160)
     plt.ylim(0, 0.03)
     plt.grid(True)

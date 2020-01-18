@@ -1,6 +1,7 @@
 import networkx as nx
 from myFunc import *
 from clustering_algorithm import *
+from degree_distribution_algorithm import *
 
 tag_PR = 'PR4a'
 tag_ALGO = 'random_graph'
@@ -14,7 +15,7 @@ dict_degree = nx.degree_centrality(G)
 #  node_degree1 = nx.degree(G, ('RAFAEL-NADAL'))
 list_degree = []
 for node in list(G.nodes()):
-    list_degree.append(nx.degree(G,node, weight='weight'))
+    list_degree.append(nx.degree(G, node, weight='weight'))
 node_size = G.order()
 avg_degree = sum(list_degree)/node_size
 prob = avg_degree/(node_size - 1)
@@ -36,6 +37,9 @@ list_random = []
 for node in list(rG.nodes()):
     list_random.append(nx.degree(rG,node, weight='weight'))
 
+# print degree distribution in log scale
+my_degreedist(fout_gexf, tag_PR)
+#my_degreedist(fout_gexf, tag_PR)
 #TODO how to figure out print 2 picture in seperate window
-my_plothist(list_random, 'Degree Distribution:' + tag_ALGO, 'Degree', 'Portion of node')
-my_plothist(list_degree, 'Degree Distribution:' + 'original', 'Degree', 'Portion of node')
+#my_plothist(list_random, 'Degree Distribution:' + tag_ALGO, 'Degree', 'Portion of node')
+#my_plothist(list_degree, 'Degree Distribution:' + 'original', 'Degree', 'Portion of node')
