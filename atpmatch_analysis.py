@@ -2,6 +2,9 @@
 # TODO [PR0] making this the main program
 from clustering_algorithm import *
 
+
+# PR2
+
 fin_gexf = 'data/Graph_atp_match_2017.gexf'
 #f_output_dd_csv = 'output/csv/distance_distribution.csv'
 #f_output_cc_csv = 'output/csv/cc_distribution.csv'
@@ -12,3 +15,15 @@ tag_ALGO = 'degree_centrality'
 fout_gexf = 'output/gexf/' + tag_PR +'_'+  tag_ALGO + '.gexf'
 
 my_clustering(fin_gexf, tag_PR)
+
+
+# PR3a
+
+# PR3b
+
+#TODO Try to merge all requirement from 3a to 3b into single csv
+
+# PR4a
+
+# PR4b
+

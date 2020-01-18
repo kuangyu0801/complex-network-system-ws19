@@ -29,14 +29,14 @@ for i in range(1, 10):
 #katz_centrality(G, alpha=0.1, beta=1.0, max_iter=1000, tol=1e-06,
 # nstart=None, normalized=True, weight=None)
 for beta in list_beta:
-    fout_top10_csv = 'output/Katz_top10_alpha'+str(round(list_alpha[5],3))+'beta'+str(beta)+'.csv'
-    fout_gexf ='output/' +  tag_ALGO + 'alpha'+str(round(list_alpha[5],3))+'beta'+str(beta)+'.gexf'
+    fout_top10_csv = 'output/csv/' + tag_PR + '_Katz_top10_alpha'+str(round(list_alpha[8], 3))+'beta'+str(beta)+'.csv'
+    fout_gexf ='output/gexf/' + tag_PR + '_' + tag_ALGO + 'alpha'+str(round(list_alpha[8], 3))+'beta'+str(beta)+'.gexf'
 
-    dict_katz = nx.katz_centrality(G, alpha=list_alpha[5], beta=beta, normalized=True, weight='weight')
+    dict_katz = nx.katz_centrality(G, alpha=list_alpha[8], beta=beta, normalized=True, weight='weight')
     list_dictkatz.append(dict_katz)
 
     my_dictop2csv(dict_katz, fout_top10_csv, tag_ALGO)
-    print(beta)
+
     attrG = my_addattr2node(G, dict_katz, fout_gexf, tag_ALGO)
     list_G.append(attrG)
 

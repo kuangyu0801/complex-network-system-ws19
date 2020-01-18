@@ -6,7 +6,9 @@ fin_gexf = 'data/Graph_atp_match_2017.gexf'
 fout_top10_csv = 'output/degree_top10.csv'
 fout_gexf = 'output/gexf/' + tag_PR +'_'+  tag_ALGO + '.gexf'
 
-#TODO the degree centrality treats every edge as 1
+# TODO [PR2] check max degree centrality, not sure whether the degree centrality treats every edge as 1
+# For multigraphs or graphs with self loops the maximum degree might be higher than n-1
+# and values of degree centrality greater than 1 are possible.
 attrG = nx.Graph()
 G = nx.read_gexf(fin_gexf)
 dict_degree = nx.degree_centrality(G)

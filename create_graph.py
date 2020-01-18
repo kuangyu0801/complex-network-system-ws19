@@ -47,6 +47,6 @@ for node in list(G.nodes):
 subG = G.subgraph(l_subNode)
 nx.write_gexf(subG, out_path_sub_G)
 
-#TODO making printing result a universal funtion for each module
+#TODO [optional] making printing result a universal funtion for each module
 print('========['+fTag+'] RESULT: SUCCESS========')
 print('Output GEXF File Name: ' + out_path_MDG)

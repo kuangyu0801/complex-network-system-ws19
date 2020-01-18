@@ -37,5 +37,4 @@ tag_title = 'Shortest Path Length Distribution'
 tag_x = 'Shortest Path Length'
 tag_y = 'Distribution'
 
-
-my_plothist(list_avgpath, tag_title, tag_x, tag_y)
+my_plothist(list_avgpath, tag_title, tag_x, tag_y, False)

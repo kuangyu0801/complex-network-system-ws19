@@ -12,8 +12,8 @@ with open(input_file_name, newline='') as inputFile, open(output_file_name, 'w',
 
   read_file = csv.reader(inputFile)
   write_File = csv.writer(outputFile)
-  # TODO double check list content with "winner_name" "loser_name"
-  # TODO maybe using winner_player_id or loser_player_id is better
+  # TODO [optional] double check list content with "winner_name" "loser_name"
+  # TODO [optional] maybe using winner_player_id or loser_player_id is better
 
   # skiping the first row
   iter_rows = iter(read_file)
