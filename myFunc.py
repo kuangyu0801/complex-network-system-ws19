@@ -107,24 +107,25 @@ def my_addattr2node(G, dict_attribute, f_out_gexf, tag_ALGO):
 
 # save histogram plot
 def my_plothist(list_in, tag_title, tag_x, tag_y, fout_png):
+
+    plt.cla()  # clear previous plot
     # the histogram of the data
     n, bins, patches = plt.hist(list_in, 40, density=True, facecolor='g', alpha=0.75)
 
     plt.xlabel(tag_x)
     plt.ylabel(tag_y)
     plt.title(tag_title)
-    #plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
-    #plt.xlim(40, 160)
-    #plt.ylim(0, 0.03)
     plt.grid(True)
     #plt.show()
     plt.savefig(fout_png)
+    print('[Output]' + fout_png)
     return True
 
 
 # save scatter plot with control flag en_log
 def my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y, fout_png, en_loglog):
 
+    plt.cla()  # clear previous plot
     if en_loglog:
         plt.loglog(list_x, list_y, 'ro')
     else:
@@ -135,8 +136,8 @@ def my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y, fout_png, en_loglog)
     plt.title(tag_title)
 
     plt.grid(True)
-    #plt.show()
     plt.savefig(fout_png)
+    print('[Output]' + fout_png)
     return True
 
 
@@ -151,6 +152,7 @@ def my_plothist_ex():
     n, bins, patches = plt.hist(x, 50, density=True, facecolor='g', alpha=0.75)
     tag_avg = 10
     print(n)
+
     plt.xlabel('Smarts')
     plt.ylabel('Probability')
     plt.title('Histogram of IQ')

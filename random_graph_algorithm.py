@@ -28,18 +28,15 @@ print(prob)
 #  gnp_random_graph(n, p, seed=None, directed=False)
 rG = nx.gnp_random_graph(node_size, prob, seed=None, directed=False)
 
-fout_gexf = 'output/gexf/' + tag_PR +'_' +  tag_ALGO + '_prob_' + str(round(prob, 3)) + '.gexf'
+fout_gexf = 'output/gexf/' + tag_PR + '_' + tag_ALGO + '_prob_' + str(round(prob, 3)) + '.gexf'
 nx.write_gexf(rG, fout_gexf)
 
+# output clustering distribution
 my_clustering(fout_gexf, tag_PR)
 
 list_random = []
 for node in list(rG.nodes()):
     list_random.append(nx.degree(rG,node, weight='weight'))
 
-# print degree distribution in log scale
+# print degree distribution
 my_degreedist(fout_gexf, tag_PR)
-#my_degreedist(fout_gexf, tag_PR)
-#TODO how to figure out print 2 picture in seperate window
-#my_plothist(list_random, 'Degree Distribution:' + tag_ALGO, 'Degree', 'Portion of node')
-#my_plothist(list_degree, 'Degree Distribution:' + 'original', 'Degree', 'Portion of node')

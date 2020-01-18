@@ -23,10 +23,9 @@ def my_degreedist(fin_gexf, tag_PR):
     tag_x = 'Degree'
     tag_y = 'Probability'
 
-    fout_png = 'output/pic/test3.png'
     my_scatterplot(list(dict_degree.keys()), list(dict_degree.values()), tag_title, tag_x, tag_y, fout_png, True)
 
     fout_png = 'output/pic/' + tag_PR + '_' + tag_ALGO + '_hist' + '.png'
-    #my_plothist(list_degree, tag_title + 'Histogram:', 'Degree k', 'Portion of node Pk', fout_png)
+    my_plothist(list_degree, tag_title + 'Histogram:', 'Degree k', 'Portion of node Pk', fout_png)
 
     return True
