@@ -1,5 +1,7 @@
 import networkx as nx
 
+
+#TODO making property this as a function
 # reading from a undirected graph
 f_input_gexf = 'data/Graph_atp_match_2017.gexf'
 f_txt_out = 'data/property.txt'

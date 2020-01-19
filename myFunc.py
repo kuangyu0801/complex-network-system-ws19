@@ -3,6 +3,22 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+def my_gexfwrite(G, fout_gexf):
+    nx.write_gexf(G, fout_gexf)
+    print('[WRITE_GEXF]'+ fout_gexf)
+    return True
+
+
+def my_avg_degree(G):
+    list_degree = []
+    for node in list(G.nodes()):
+        list_degree.append(nx.degree(G, node, weight='weight'))
+    node_size = G.order()
+    avg_degree = sum(list_degree) / node_size
+    return avg_degree
+
+
 def my_max_degree(G):
     max_degree = 0
     for node in list(G.nodes):
@@ -10,6 +26,8 @@ def my_max_degree(G):
             max_degree = G.degree(node)
     print('max_degree %d' % max_degree)
     return max_degree
+
+
 def my_max_degree_node(G):
     max_node = {}
     max_degree = 0

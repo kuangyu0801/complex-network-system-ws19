@@ -11,7 +11,7 @@ tag_ALGO = 'degree_centrality'
 tag_ALGO_1 = 'clustering_coeff'
 fin_gexf = 'data/Graph_atp_match_2017.gexf'
 fout_top10_csv = 'output/degree_top10.csv'
-fout_gexf = 'output/gexf/' + tag_PR +'_'+  tag_ALGO + '.gexf'
+fout_gexf = 'output/gexf/' + tag_PR + '_' + tag_ALGO + '.gexf'
 
 
 G = nx.read_gexf(f_input_gexf)

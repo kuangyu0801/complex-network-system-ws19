@@ -14,6 +14,7 @@ dict_name = {}
 dict_order = {}
 G = nx.read_gexf(fin_gexf)
 #TODO [PR4] implement harmonic centrality without using harmonic_centrality
+#TODO consider using – nx.shortest_path(g, source, target)
 dict_harmo = nx.harmonic_centrality(G, nbunch=None, distance='weight')
 n_idx = 0
 for node in dict_harmo.keys():
