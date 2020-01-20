@@ -3,8 +3,8 @@ from myFunc import *
 tag_PR = '3a'
 tag_ALGO = 'degree_centrality'
 fin_gexf = 'data/Graph_atp_match_2017.gexf'
-fout_top10_csv = 'output/degree_top10.csv'
-fout_gexf = 'output/gexf/' + tag_PR +'_'+  tag_ALGO + '.gexf'
+fout_top10_csv = 'output/csv/' + tag_PR + '_' + tag_ALGO + '_top10.csv'
+fout_gexf = 'output/gexf/' + tag_PR + '_' + tag_ALGO + '.gexf'
 
 # TODO [PR2] check max degree centrality, not sure whether the degree centrality treats every edge as 1
 # For multigraphs or graphs with self loops the maximum degree might be higher than n-1

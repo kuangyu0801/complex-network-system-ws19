@@ -10,13 +10,13 @@ import numpy
 tag_PR = '3b'
 tag_ALGO = 'Katz_centrality'
 fin_gexf = 'data/Graph_atp_match_2017.gexf'
-fout_top10_csv = 'output/Katz_top10.csv'
-fout_gexf = 'output/' +  tag_ALGO + '.gexf'
+fout_top10_csv = 'output/csv/' + tag_PR + '_' + tag_ALGO + '_top10.csv'
+fout_gexf = 'output/' + tag_PR + '_' + tag_ALGO + '.gexf'
 
 
 attrG = nx.Graph()
 G = nx.read_gexf(fin_gexf)
-#use max(nx.adjacency_spectrum(G))
+# use max(nx.adjacency_spectrum(G)) for eigen value calculation
 max_lambda = max(nx.adjacency_spectrum(G))
 max_alpha = 1/max_lambda.real
 list_alpha = []
@@ -26,11 +26,11 @@ list_G = []
 for i in range(1, 10):
     list_alpha.append(i*(max_alpha/10))
 
-#katz_centrality(G, alpha=0.1, beta=1.0, max_iter=1000, tol=1e-06,
+# katz_centrality(G, alpha=0.1, beta=1.0, max_iter=1000, tol=1e-06,
 # nstart=None, normalized=True, weight=None)
 for beta in list_beta:
-    fout_top10_csv = 'output/csv/' + tag_PR + '_Katz_top10_alpha'+str(round(list_alpha[8], 3))+'beta'+str(beta)+'.csv'
-    fout_gexf ='output/gexf/' + tag_PR + '_' + tag_ALGO + 'alpha'+str(round(list_alpha[8], 3))+'beta'+str(beta)+'.gexf'
+    fout_top10_csv = 'output/csv/' + tag_PR + '_Katz_top10_alpha'+str(round(list_alpha[8], 3))+'_beta'+str(beta)+'.csv'
+    fout_gexf ='output/gexf/' + tag_PR + '_' + tag_ALGO + '_alpha'+str(round(list_alpha[8], 3))+'_beta'+str(beta)+'.gexf'
 
     dict_katz = nx.katz_centrality(G, alpha=list_alpha[8], beta=beta, normalized=True, weight='weight')
     list_dictkatz.append(dict_katz)
