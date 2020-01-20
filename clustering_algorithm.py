@@ -5,10 +5,10 @@ from myFunc import *
 
 def my_clustering(fin_gexf, tag_PR):
 
-    f_output_cc_csv = 'output/csv/' + tag_PR + 'cc_distribution.csv'
+    f_output_cc_csv = 'output/csv/' + tag_PR + 'CC_dist.csv'
     tag_ALGO = 'clustering_coeff'
     fout_gexf = 'output/gexf/' + tag_PR + '_' + tag_ALGO + '.gexf'
-    fout_png = 'output/pic/' + tag_PR + '_cc_distribution.png'
+    fout_png = 'output/pic/' + tag_PR + '_CC_dist.png'
     dict_degree_cc = {}
     dict_degree_avg = {}
     G = nx.read_gexf(fin_gexf)
@@ -42,7 +42,7 @@ def my_clustering(fin_gexf, tag_PR):
 
     # TODO consider – nx.average_clustering(g)
     my_scatterplot(list(dict_degree_avg.keys()), list(dict_degree_avg.values()), tag_title, tag_x, tag_y, fout_png, False)
-    fout_png = 'output/pic/' + tag_PR + '_cc_distribution' + '_log' + '.png'
+    fout_png = 'output/pic/' + tag_PR + '_CC_dist' + '_log' + '.png'
     my_scatterplot(list(dict_degree_avg.keys()), list(dict_degree_avg.values()), tag_title, tag_x, tag_y, fout_png, True)
 
 

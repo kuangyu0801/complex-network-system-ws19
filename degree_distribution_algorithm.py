@@ -4,7 +4,7 @@ from myFunc import *
 
 
 def my_degreedist(fin_gexf, tag_PR):
-    tag_ALGO = 'degree_distribution'
+    tag_ALGO = 'Degree_dist'
 
     list_degree = []
     dict_degree = {}

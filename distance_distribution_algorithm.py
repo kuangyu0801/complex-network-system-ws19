@@ -2,6 +2,7 @@ import csv
 import networkx as nx
 from myFunc import *
 
+
 f_input_gexf = 'data/Graph_atp_match_2017.gexf'
 f_output_dd_csv = 'output/csv/distance_distribution.csv'
 f_output_cc_csv = 'output/csv/cc_distribution.csv'
