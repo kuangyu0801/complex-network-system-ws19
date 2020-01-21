@@ -55,11 +55,11 @@ def my_min_degree(G):
 
 def my_PrintFile(f_input_file_name, f_output_file_name):
     print('Input File Name: ' + f_input_file_name)
-    print('Output File Name: ' + f_output_file_name)
+    print('[Output] ' + f_output_file_name)
 
 
 def my_PrintOutFile(f_output_file_name):
-    print('[Output] File Name: ' + f_output_file_name)
+    print('[Output]' + f_output_file_name)
 
 
 def my_PrintTag(tag_PR, tag_ALGO):

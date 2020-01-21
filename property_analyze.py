@@ -1,69 +1,58 @@
 import networkx as nx
-
-
-#TODO making property this as a function
+from myFunc import *
 # reading from a undirected graph
-f_input_gexf = 'data/Graph_atp_match_2017.gexf'
-f_txt_out = 'data/property.txt'
 
-# for simplicity, I computed the graph with undirected graph
 
-G = nx.read_gexf(f_input_gexf)
+def my_property(G, ftxt_out):
+    tag_PR = '2'
+    tag_ALGO = 'property_analysis'
+    # for simplicity, I computed the graph with undirected graph
+    # order
+    g_order = G.order()
 
-# order
-g_order = G.order()
+    # size
+    g_size = G.size()
 
-# size
-g_size = G.size()
+    # density
+    g_dens = nx.density(G)
 
-# density
-g_dens = nx.density(G)
+    # diameter
+    g_diameter = nx.diameter(G)
 
-# diameter
-g_diameter = nx.diameter(G)
+    # radius
+    g_radius = nx.radius(G)
 
-# radius
-g_radius = nx.radius(G)
+    # average path length
+    g_avg_path_len = nx.average_shortest_path_length(G)
 
-# average path length
-g_avg_path_len = nx.average_shortest_path_length(G)
+    # average clustering coefficient
+    g_avg_cluster_coeff = nx.average_clustering(G, weight='weight')
 
-# average clustering coefficient
-d_cluster = nx.clustering(G)  # return a floating dictionary
-sum_cluster = 0
-for value in d_cluster.values():
-    sum_cluster = sum_cluster + value
+    # transitivity
+    g_trans = nx.transitivity(G)
 
-len(d_cluster)
-g_avg_cluster_coeff_hand = sum_cluster/g_order
-g_avg_cluster_coeff = nx.average_clustering(G)
+    # number of triangle
+    dict_trian = nx.triangles(G)  # returning a dictionary
+    g_num_trian = sum(list(dict_trian.values()))/3 # a triangle is counted 3 times (1 for each node)
 
-# transitivity
-# TODO disable transitivity for not implemented for multigraph type
-g_trans = nx.transitivity(G)
+    # number of clique
+    l_clique = list(nx.find_cliques(G))
+    g_num_clique = len(l_clique)
 
-# number of triangle
-d_trian = nx.triangles(G)  # returning a dictionary
-sum_tri = 0
-for value in d_cluster.values():
-    sum_tri = sum_tri + value
-g_num_trian = sum_tri
+    # connected component
+    g_num_conn = nx.number_connected_components(G)
 
-# number of clique
-l_clique = list(nx.find_cliques(G))
-g_num_clique = len(l_clique)
-
-# connected component
-g_num_conn = nx.number_connected_components(G)
-
-with open(f_txt_out, 'w') as f:
-    f.write('order: %d \n' % g_order)
-    f.write('size: %d \n' % g_size)
-    f.write('density: %f \n' % g_dens)
-    f.write('diameter:%d \n' % g_diameter)
-    f.write('radius: %d \n' % g_radius)
-    f.write('average path length: %f \n' % g_avg_path_len)
-    f.write('transitivity: %f \n' % g_trans)
-    f.write('number of triangle: %d \n' % g_num_trian)
-    f.write('number of clique: %d \n' % g_num_clique)
-    f.write('number of component: %d \n' % g_num_conn)
+    with open(ftxt_out, 'w') as f:
+        f.write('order: %d \n' % g_order)
+        f.write('size: %d \n' % g_size)
+        f.write('density: %f \n' % g_dens)
+        f.write('diameter:%d \n' % g_diameter)
+        f.write('radius: %d \n' % g_radius)
+        f.write('average path length: %f \n' % g_avg_path_len)
+        f.write('average clustering coefficient: %f \n' % g_avg_cluster_coeff)
+        f.write('transitivity: %f \n' % g_trans)
+        f.write('number of triangle: %d \n' % g_num_trian)
+        f.write('number of clique: %d \n' % g_num_clique)
+        f.write('number of component: %d \n' % g_num_conn)
+    my_PrintOutFile(ftxt_out)
+    my_PrintTag(tag_PR, tag_ALGO)

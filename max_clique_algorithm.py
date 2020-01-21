@@ -15,16 +15,17 @@ def my_maxclique(G):
     list_num = []  # the list to keep number of nodes in one clique
     for node in list_clique:
         list_num.append(len(node))
-        print(node)
     max_num_clique = max(list_num)
-
+    num_node = 0
     # adding all nodes in max clique to set
     with open(fout_txt, 'w') as f:
-        f.write('maximal number of clique: %d\n' % max_num_clique)
         for node in list_clique:
             if len(node) == max_num_clique:
                 set_clique_node.update(node)
-                f.write(str(node)+ '\n')
+                num_node = num_node + 1
+                f.write(str(node) + '\n')
+        f.write('number of maximal clique: %d\n' % num_node)
+        f.write('number node in maximal clique: %d\n' % max_num_clique)
 
     # remove nodes from list of all nodes, leaving non-clique node
     for node in set_clique_node:

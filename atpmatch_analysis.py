@@ -4,23 +4,32 @@
 from smallworld_algorithm import *
 from clustering_algorithm import *
 from max_clique_algorithm import *
+from property_analyze import *
 
-tag_PR = {2: 'PR2', 3: 'PR3a', 4: 'PR3b', 5: 'PR4a', 6: 'PR4b'}
+#TODO making this a interactive on terminal so we won't always executing whole function
+tag_PR = {2: '2', 3: '3a', 4: '3b', 5: '4a', 6: '4b'}
+tag_ALGO = {1: 'property_analysis'}
+# PR1
 
 # PR2
 
 fin_gexf = 'data/Graph_atp_match_2017.gexf'
+
+G = nx.read_gexf(fin_gexf)
+
+ftxt_out = 'output/' + tag_PR[2] + '_' +  tag_ALGO[1] + '.txt'
+my_property(G, ftxt_out)
 #f_output_dd_csv = 'output/csv/distance_distribution.csv'
 #f_output_cc_csv = 'output/csv/cc_distribution.csv'
 tag_PR = 'PR2'
 tag_ALGO = 'degree_centrality'
 #tag_ALGO_1 = 'clustering_coeff'
 #fout_top10_csv = 'output/degree_top10.csv'
-fout_gexf = 'output/gexf/' + tag_PR +'_'+  tag_ALGO + '.gexf'
+fout_gexf = 'output/gexf/' + tag_PR[2] +'_'+  tag_ALGO[1] + '.gexf'
 
-if True:
-    G = nx.read_gexf(fin_gexf)
-    maxclique_G = my_maxclique(G)
+
+
+maxclique_G = my_maxclique(G)
 #my_clustering(fin_gexf, tag_PR)
 
 
@@ -44,7 +53,7 @@ if False:
     tag_PR = 'PR4b'
     tag_ALGO = 'Original'
     tag_comb = tag_PR + '_' + tag_ALGO
-    fout_txt = 'output/' + tag_PR + '_' + tag_ALGO  + '.txt'
+    fout_txt = 'output/' + tag_PR + '_' + tag_ALGO + '.txt'
 
     # calculating small-worldness with my own graph
     my_calsmallworldness(G, fout_txt)
