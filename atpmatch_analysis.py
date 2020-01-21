@@ -9,7 +9,7 @@ from egocentric_network_algorithm import *
 
 #TODO making this a interactive on terminal so we won't always executing whole function
 tag_PR = {2: '2', 3: '3a', 4: '3b', 5: '4a', 6: '4b'}
-tag_ALGO = {1: 'property_analysis', 2: 'ego_network'}
+tag_ALGO = {1: 'property_analysis', 2: 'ego_network',10: 'degree_centrality'}
 # PR1
 
 # PR2
@@ -19,18 +19,18 @@ fin_gexf = 'data/Graph_atp_match_2017.gexf'
 G = nx.read_gexf(fin_gexf)
 
 if False:
-    ftxt_out = 'output/' + tag_PR[2] + '_' +  tag_ALGO[1] + '.txt'
+    ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[1] + '.txt'
     my_property(G, ftxt_out)
-#f_output_dd_csv = 'output/csv/distance_distribution.csv'
-#f_output_cc_csv = 'output/csv/cc_distribution.csv'
-tag_PR = 'PR2'
-tag_ALGO = 'degree_centrality'
-#tag_ALGO_1 = 'clustering_coeff'
-#fout_top10_csv = 'output/degree_top10.csv'
+
 
 fout_gexf = 'output/gexf/' + tag_PR[2] + '_' + tag_ALGO[2] + '.gexf'
-my_egonetwork(G, fout_gexf)
+#TODO making this a automatic function
+most_node = 'DAVID-GOFFIN' # #1 node in page rank
+eG = my_egonetwork(G, most_node)
 
+ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[2] + '.txt'
+print(ftxt_out)
+my_property(eG, ftxt_out)
 if False:
     maxclique_G = my_maxclique(G)
     my_clustering(fin_gexf, tag_PR)
