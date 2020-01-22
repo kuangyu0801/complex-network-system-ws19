@@ -65,8 +65,6 @@ def my_PrintOutFile(f_output_file_name):
 def my_PrintTag(tag_PR, tag_ALGO):
     print('========[PR:' + tag_PR + '][ALGO:' + tag_ALGO + ']  RESULT: SUCCESS========')
 
-#
-
 
 def my_dict2csv(dict_original, f_out_csv):
     write_file = csv.writer(outputFile)

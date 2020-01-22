@@ -8,11 +8,13 @@ from property_analyze import *
 from egocentric_network_algorithm import *
 from distance_distribution_algorithm import *
 from k_core_algorithm import *
+from random_graph_algorithm import *
 
 #TODO making this a interactive on terminal so we won't always executing whole function
-tag_PR = {2: '2', 3: '3a', 4: '3b', 5: '4a', 6: '4b'}
+tag_PR = {2: '2', 3: '3a', 6: '3b', 4: '4a', 8: '4b'}
 tag_ALGO = {2: {1: 'property_analysis', 2: 'ego_network', 3: 'distance_distribution',
                 5: 'clustering_coeff', 4: 'max_clique', 6: 'k_core'},
+            4: {1: 'random_graph'},
             10: 'degree_centrality'}
 
 # PR1
@@ -52,8 +54,8 @@ if False:
 
 # k_core
 if False:
-    fout_my_gexf_name = 'output/gexf/' + tag_PR[2] + '_' + tag_ALGO[2][6]
-    fout_nx_gexf_name = 'output/gexf/' + tag_PR[2] + '_' + tag_ALGO[2][6]
+    fout_my_gexf_name = 'output/gexf/' + tag_PR[2] + '_' + tag_ALGO[2][6] + '_'
+    fout_nx_gexf_name = 'output/gexf/' + tag_PR[2] + '_' + tag_ALGO[2][6] + '_'
     fout_nx_gexf, fout_my_gexf = my_kcore(fin_gexf, fout_my_gexf_name, fout_nx_gexf_name)
 
     fout_my_txt = 'output/' + tag_PR[2] + '_' + tag_ALGO[2][6] + '_my.txt'
@@ -74,6 +76,13 @@ if False:
 #TODO Try to merge all requirement from 3a to 3b into single csv
 
 # PR4a
+if True:
+    fout_random_name = 'output/gexf/' + tag_PR[4] + '_' + tag_ALGO[4][1] + '_'
+    ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[4][1] + '.txt'
+
+    fout_random_gexf = my_randomgraph(fin_gexf, fout_random_name)
+
+    my_property(fout_random_gexf, ftxt_out) # property_analysis for ego
 
 # PR4b
 if False:
