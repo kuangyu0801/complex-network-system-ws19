@@ -128,13 +128,12 @@ def my_plothist(list_in, tag_title, tag_x, tag_y, fout_png):
 
     plt.cla()  # clear previous plot
     # the histogram of the data
-    n, bins, patches = plt.hist(list_in, 40, density=True, facecolor='g', alpha=0.75)
+    n, bins, patches = plt.hist(list_in, 40, density=True, facecolor='g')
 
     plt.xlabel(tag_x)
     plt.ylabel(tag_y)
     plt.title(tag_title)
     plt.grid(True)
-    #plt.show()
     plt.savefig(fout_png)
     print('[Output]' + fout_png)
     return True
@@ -167,7 +166,7 @@ def my_plothist_ex():
     x = mu + sigma * np.random.randn(10000)
 
     # the histogram of the data
-    n, bins, patches = plt.hist(x, 50, density=True, facecolor='g', alpha=0.75)
+    n, bins, patches = plt.hist(x, 50, density=True, facecolor='g')
     tag_avg = 10
     print(n)
 

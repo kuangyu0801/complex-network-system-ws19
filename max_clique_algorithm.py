@@ -1,12 +1,11 @@
 from myFunc import *
 
 
-def my_maxclique(G):
-
+def my_maxclique(fin_gexf, fout_gexf):
+    G = nx.read_gexf(fin_gexf)
     tag_PR = '2'
     tag_ALGO = 'max_clique'
     fout_txt = 'output/' + tag_PR + '_' + tag_ALGO + '.txt'
-    fout_gexf = 'output/gexf/' + tag_PR + '_' + tag_ALGO + '.gexf'
 
     cG = G.copy()
     set_clique_node = set()
@@ -19,6 +18,7 @@ def my_maxclique(G):
     num_node = 0
     # adding all nodes in max clique to set
     with open(fout_txt, 'w') as f:
+        f.write('gexf file: %s \n' % fin_gexf)
         for node in list_clique:
             if len(node) == max_num_clique:
                 set_clique_node.update(node)

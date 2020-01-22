@@ -3,39 +3,32 @@ import networkx as nx
 from myFunc import *
 
 
-f_input_gexf = 'data/Graph_atp_match_2017.gexf'
-f_output_dd_csv = 'output/csv/distance_distribution.csv'
-f_output_cc_csv = 'output/csv/cc_distribution.csv'
+def my_distance_dist(fin_gexf, fout_csv, fout_png_name):
 
-tag_PR = '2'
-tag_ALGO = 'degree_centrality'
-tag_ALGO_1 = 'clustering_coeff'
-fin_gexf = 'data/Graph_atp_match_2017.gexf'
-fout_top10_csv = 'output/degree_top10.csv'
-fout_gexf = 'output/gexf/' + tag_PR + '_' + tag_ALGO + '.gexf'
+    tag_PR = '2'
+    tag_ALGO = 'distance_distribution'
 
+    G = nx.read_gexf(fin_gexf)
+    list_node = list(G.nodes())
+    first_node = list_node[1]
+    list_avgpath = list()
 
-G = nx.read_gexf(f_input_gexf)
-list_avgpath = []
-list_node = list(G.nodes())
-first_node = list_node[1]
-#  print(list_node[1])
+    # degree = G.degree(node)
+    with open(fout_csv, 'w', newline='') as outputFile_0:
+        write_File_0 = csv.writer(outputFile_0)
+        for node in list_node:
+            dict_path = nx.shortest_path_length(G, source=node, weight='weight')  # dict for return path length
+            avg_path = round(sum(dict_path.values()) / len(dict_path), 3)  # precision until 3 decimal
+            list_avgpath.append(avg_path)
+            write_File_0.writerow([node, avg_path])
 
-# degree = G.degree(node)
-dict_path = nx.shortest_path_length(G, source=first_node, weight='weight')  # dict for return path length
-avg_path = round(sum(dict_path.values()) / len(dict_path), 3)  #
-list_avgpath = list(dict_path.values())
+    tag_title = tag_PR + ': AVG Shortest Path Length Distribution'
+    tag_x = 'Shortest Path Length * 10 times' #TODO it seems histogram having problem handling precision under 3 decimal
+    tag_y = 'Portion of node Pk'
+    fout_png = fout_png_name + '_hist' + '.png'
 
-with open(f_output_dd_csv, 'w', newline='') as outputFile_0:
-    write_File_0 = csv.writer(outputFile_0)
-    #TODO print starting node and average path length
-    #TODO change to 折線圖
-    #TODO fix distribution sum > 1
-    for node in dict_path.keys():
-        write_File_0.writerow([node, dict_path[node]])
+    my_plothist(list_avgpath, tag_title, tag_x, tag_y, fout_png)
 
-tag_title = 'Shortest Path Length Distribution'
-tag_x = 'Shortest Path Length'
-tag_y = 'Distribution'
+    my_PrintOutFile(fout_csv)
+    my_PrintTag(tag_PR, tag_ALGO)
 
-my_plothist(list_avgpath, tag_title, tag_x, tag_y, False)

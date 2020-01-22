@@ -2,25 +2,16 @@ import networkx as nx
 from myFunc import *
 
 
-def my_kcore():
-    f_input_gexf = 'data/Graph_atp_match_2017.gexf'
-    f_output_nx_kcore = 'output/nx_k_core.gexf'
-    f_output_my_kcore = 'output/my_k_core.gexf'
+def my_kcore(fin_gexf, fout_nx_gexf_name, fout_my_gexf_name):
 
-
-    if True:
-        G = nx.read_gexf(f_input_gexf)
-    else:
-        G = nx.complete_graph(9)
+    G = nx.read_gexf(fin_gexf)
     kG = nx.k_core(G)
     max_degree = my_max_degree(G)
-    #for i in range(max_degree):
-
     cur_k = max_degree
     tmpG = G.copy()
     curG = nx.Graph()
-    flag_first = False
 
+    flag_first = False
     while (tmpG.order() < cur_k) or (flag_first == False): # algo stops when least order >= cur_k
 
         flag_first = True
@@ -54,9 +45,14 @@ def my_kcore():
         # Step 4– the remaining nodes form the k-core
         curG = tmpG
         cur_k = cur_k - 1
-
+    final_k = (cur_k+1)
     print('final_k: %d' % int(cur_k+1))
-    my_min_degree(curG)  # check
-    my_min_degree(kG)  # check
-    nx.write_gexf(kG, f_output_nx_kcore)
-    nx.write_gexf(curG, f_output_my_kcore)
+
+    fout_nx_gexf =  fout_nx_gexf_name + '_k_' + str(final_k) + '_my.gexf'
+    fout_my_gexf = fout_my_gexf_name + '_k_' + str(final_k) + '_nx.gexf'
+    nx.write_gexf(kG, fout_nx_gexf)
+    nx.write_gexf(curG, fout_my_gexf)
+
+    my_PrintOutFile(fout_nx_gexf)
+    my_PrintOutFile(fout_my_gexf)
+    return fout_nx_gexf, fout_my_gexf

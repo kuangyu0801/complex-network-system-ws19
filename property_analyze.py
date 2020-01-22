@@ -3,10 +3,11 @@ from myFunc import *
 # reading from a undirected graph
 
 
-def my_property(G, ftxt_out):
+def my_property(fin_gexf, ftxt_out):
     tag_PR = '2'
     tag_ALGO = 'property_analysis'
     # for simplicity, I computed the graph with undirected graph
+    G = nx.read_gexf(fin_gexf)
     # order
     g_order = G.order()
 
@@ -43,6 +44,7 @@ def my_property(G, ftxt_out):
     g_num_conn = nx.number_connected_components(G)
 
     with open(ftxt_out, 'w') as f:
+        f.write('gexf file: %s \n' % fin_gexf)
         f.write('order: %d \n' % g_order)
         f.write('size: %d \n' % g_size)
         f.write('density: %f \n' % g_dens)
