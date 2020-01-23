@@ -1,0 +1,12 @@
+gexf file: output/gexf/2_k_core__k_78_my.gexf 
+order: 162 
+size: 8954 
+density: 0.686604 
+diameter:2 
+radius: 2 
+average path length: 1.313396 
+average clustering coefficient: 0.039433 
+transitivity: 0.744889 
+number of triangle: 252986 
+number of clique: 6800942 
+number of component: 1 

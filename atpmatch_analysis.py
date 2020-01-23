@@ -18,7 +18,7 @@ tag_ALGO = {2: {1: 'property_analysis', 2: 'ego_network', 3: 'distance_distribut
             4: {1: 'random_graph'},
             8: {1: 'samllworld', 2: 'preferential_attachment '}
             }
-input_gexf = ['data/Graph_atp_match_1991-2016.gexf', 'data/Graph_atp_match_2017.gexf']
+input_gexf = ['data/Graph_atp_match_1996-2016.gexf', 'data/Graph_atp_match_1991-2016.gexf', 'data/Graph_atp_match_2017.gexf']
 
 # PR1
 
@@ -30,7 +30,7 @@ fout_ego_name = 'output/gexf/' + tag_PR[2] + '_' + tag_ALGO[2][2]
 G = nx.read_gexf(fin_gexf)
 
 # property_analysis for original network
-if True:
+if False:
     ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[2][1] + '.txt'
 
     my_property(fin_gexf, ftxt_out)
@@ -68,7 +68,7 @@ if False:
 
 
 # max_clique
-if False:
+if True:
     fout_max_clique_gexf = 'output/gexf/' + tag_PR[2] + '_' + tag_ALGO[2][4] + '.gexf'
     maxclique_G = my_maxclique(fin_gexf, fout_max_clique_gexf)
 
