@@ -1,0 +1,12 @@
+gexf file: data/Graph_atp_match_1991-2016.gexf 
+order: 3480 
+size: 56872 
+density: 0.009395 
+diameter:8 
+radius: 4 
+average path length: 3.334283 
+average clustering coefficient: 0.005716 
+transitivity: 0.354133 
+number of triangle: 980858 
+number of clique: 17515013 
+number of component: 1 

@@ -1,13 +1,18 @@
 import networkx as nx
 
-f_input_gexf = 'data/MultiGraph_atp_match_2017.gexf'
-G = nx.read_gexf(f_input_gexf)
-# number of clique
-l_clique = list(nx.find_cliques(G))
-g_num_clique = len(l_clique)
-f_txt_out = 'data/property.txt'
-s = 10
-with open(f_txt_out, 'w') as f:
-    f.write('Hello, world! %d\n' % s)
-    f.write('Hello, world!!!')
+print(list(range(1, 20)))
+print(list(range(1996, 2017)))
 
+list_year = list(range(1996, 2017))
+print(list_year)
+list_test = [2017]
+print(list_test)
+input_file_name = 'data/match_scores_2017_unindexed_csv.csv'
+output_file_name = 'data/test.csv'
+tag = '2015-197'
+info = int(tag[0:4])
+print(info)
+if info in list_year:
+    print('yes')
+else:
+    print('no')
