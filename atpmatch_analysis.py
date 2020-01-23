@@ -14,20 +14,23 @@ from random_graph_algorithm import *
 tag_PR = {2: '2', 3: '3a', 6: '3b', 4: '4a', 8: '4b'}
 tag_ALGO = {2: {1: 'property_analysis', 2: 'ego_network', 3: 'distance_distribution',
                 5: 'clustering_coeff', 4: 'max_clique', 6: 'k_core'},
+            3: {1: 'degree_centrality'},
             4: {1: 'random_graph'},
-            10: 'degree_centrality'}
+            8: {1: 'samllworld', 2: 'preferential_attachment '}
+            }
+input_gexf = ['data/Graph_atp_match_1991-2016.gexf', 'data/Graph_atp_match_2017.gexf']
 
 # PR1
 
 # PR2
 
-fin_gexf = 'data/Graph_atp_match_2017.gexf'
+fin_gexf = input_gexf[0]
 fout_ego_name = 'output/gexf/' + tag_PR[2] + '_' + tag_ALGO[2][2]
 
 G = nx.read_gexf(fin_gexf)
 
 # property_analysis for original network
-if False:
+if True:
     ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[2][1] + '.txt'
 
     my_property(fin_gexf, ftxt_out)
@@ -76,7 +79,7 @@ if False:
 #TODO Try to merge all requirement from 3a to 3b into single csv
 
 # PR4a
-if True:
+if False:
     fout_random_name = 'output/gexf/' + tag_PR[4] + '_' + tag_ALGO[4][1] + '_'
     ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[4][1] + '.txt'
 
@@ -86,7 +89,6 @@ if True:
 
 # PR4b
 if False:
-    G = nx.read_gexf(fin_gexf)
     k_link = round(my_avg_degree(G)/2)  # using only 1/2 of average degree
     node_size = G.order()
     p_prob = [0.001, 0.01, 0.1, 1]
