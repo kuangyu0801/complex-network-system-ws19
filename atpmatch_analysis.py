@@ -9,6 +9,7 @@ from egocentric_network_algorithm import *
 from distance_distribution_algorithm import *
 from k_core_algorithm import *
 from random_graph_algorithm import *
+from preferential_attachment_algorithm import *
 
 #TODO making this a interactive on terminal so we won't always executing whole function
 tag_PR = {2: '2', 3: '3a', 6: '3b', 4: '4a', 8: '4b'}
@@ -99,3 +100,9 @@ if False:
 
     # calculating small-worldness with my own graph
     my_calsmallworldness(G, fout_txt)
+
+if True:
+    fout_txt = 'output/' + tag_PR[8] + '_' + tag_ALGO[8][2] + '.txt'  # my network
+
+    fout_pre_attach_gexf = my_preferattach(fin_gexf)
+    my_property(fout_pre_attach_gexf, fout_txt)  # property_analysis
