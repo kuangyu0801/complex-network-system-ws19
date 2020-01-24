@@ -1,0 +1,3 @@
+clustering coefficient: 0.714816 
+average path length: 11.348518 
+Small-Worldness: 0.062988 

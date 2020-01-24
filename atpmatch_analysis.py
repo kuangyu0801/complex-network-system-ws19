@@ -79,7 +79,7 @@ if False:
 #TODO Try to merge all requirement from 3a to 3b into single csv
 
 # PR4a
-if True:
+if False:
     fout_random_name = 'output/gexf/' + tag_PR[4] + '_' + tag_ALGO[4][1] + '_'
     ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[4][1] + '.txt'
 
@@ -90,14 +90,12 @@ if True:
 if False:
     k_link = round(my_avg_degree(G)/2)  # using only 1/2 of average degree
     node_size = G.order()
-    p_prob = [0.001, 0.01, 0.1, 1]
+    p_prob = [0.001, 0.01, 0.05, 0.1, 0.5, 1]
+    list_gexf = list()
     for p in p_prob:
-        my_smallworld(node_size, k_link, p)
+        list_gexf.append(my_smallworld(node_size, k_link, p))
 
-    tag_PR = 'PR4b'
-    tag_ALGO = 'Original'
-    tag_comb = tag_PR + '_' + tag_ALGO
-    fout_txt = 'output/' + tag_PR + '_' + tag_ALGO + '.txt'
+    fout_txt = 'output/' + tag_PR[8] + '_' + tag_ALGO[8][1] + '_my.txt'  # my network
 
     # calculating small-worldness with my own graph
     my_calsmallworldness(G, fout_txt)
