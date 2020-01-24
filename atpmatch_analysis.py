@@ -68,7 +68,7 @@ if False:
 
 
 # max_clique
-if True:
+if False:
     fout_max_clique_gexf = 'output/gexf/' + tag_PR[2] + '_' + tag_ALGO[2][4] + '.gexf'
     maxclique_G = my_maxclique(fin_gexf, fout_max_clique_gexf)
 
@@ -79,13 +79,12 @@ if True:
 #TODO Try to merge all requirement from 3a to 3b into single csv
 
 # PR4a
-if False:
+if True:
     fout_random_name = 'output/gexf/' + tag_PR[4] + '_' + tag_ALGO[4][1] + '_'
     ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[4][1] + '.txt'
 
     fout_random_gexf = my_randomgraph(fin_gexf, fout_random_name)
-
-    my_property(fout_random_gexf, ftxt_out) # property_analysis for ego
+    my_property(fout_random_gexf, ftxt_out)  # property_analysis
 
 # PR4b
 if False:
