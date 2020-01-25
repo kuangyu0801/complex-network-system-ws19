@@ -1,0 +1,12 @@
+gexf file: output/gexf/2_ego_network_ROGER-FEDERER.gexf 
+order: 303 
+size: 16047 
+density: 0.350731 
+diameter:2 
+radius: 1 
+average path length: 1.649269 
+average clustering coefficient: 0.028295 
+transitivity: 0.589713 
+number of triangle: 404647 
+number of clique: 5621903 
+number of component: 1 

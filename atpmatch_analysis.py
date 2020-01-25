@@ -53,12 +53,11 @@ if False:
 
 # ego_network
 if False:
-    #TODO make the first node selectable from pagerank...
-    most_node = 'DAVID-GOFFIN' # #1 node in page rank
-    ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[2][2] + '.txt'
+    most_node = 'ROGER-FEDERER'  # 1st node in page rank
+    ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[2][2] + '_' + most_node + '.txt'
 
     fout_ego_gexf, eG = my_egonetwork(G, fout_ego_name, most_node)
-    my_property(fout_ego_gexf, ftxt_out) # property_analysis for ego
+    my_property(fout_ego_gexf, ftxt_out)  # property_analysis for ego
 
 # clustering vs degree
 if False:
@@ -85,7 +84,7 @@ if False:
 #TODO Try to merge all node attribute in on graph
 
 # PR3a
-if True:
+if False:
 
     fout_top10_csv_name = 'output/csv/' + tag_PR[3] + '_' + tag_ALGO[3][1]
     fout_gexf_name = 'output/gexf/' + tag_PR[3] + '_' + tag_ALGO[3][1]
@@ -108,7 +107,7 @@ if True:
     my_dict2scatter(dict_degree, dict_eigen, tag_ALGO[3][3], tag_ALGO[3][4], tag_PR[3])
 
 # PR3b
-if False:
+if True:
     fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][2]
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][2]
     fout_katz_gexf, dict_katz = my_katz(fin_gexf, fout_top10_csv_name, fout_gexf_name)
