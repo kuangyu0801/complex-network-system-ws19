@@ -12,10 +12,10 @@ from random_graph_algorithm import *
 from preferential_attachment_algorithm import *
 from pagerank_algorithm import *
 from katz_centrality_algorithm import *
-# from harmonic_centrality_algorithm import *
-# from degree_centrality_algorithm import *
-# from eigen_centrality_algorithm import *
-# from betweeness_centrality_algorithm import *
+from harmonic_centrality_algorithm import *
+from degree_centrality_algorithm import *
+from eigen_centrality_algorithm import *
+from betweeness_centrality_algorithm import *
 
 
 #TODO making this a interactive on terminal so we won't always executing whole function
@@ -85,9 +85,23 @@ if False:
 #TODO Try to merge all node attribute in on graph
 
 # PR3a
-if False:
-    fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][1]
-    fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][1]
+if True:
+
+    fout_top10_csv_name = 'output/csv/' + tag_PR[3] + '_' + tag_ALGO[3][1]
+    fout_gexf_name = 'output/gexf/' + tag_PR[3] + '_' + tag_ALGO[3][1]
+    fout_harm_gexf = my_harmonic(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+
+    fout_top10_csv_name = 'output/csv/' + tag_PR[3] + '_' + tag_ALGO[3][2]
+    fout_gexf_name = 'output/gexf/' + tag_PR[3] + '_' + tag_ALGO[3][2]
+    fout_between_gexf = my_betweeness(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+
+    fout_top10_csv_name = 'output/csv/' + tag_PR[3] + '_' + tag_ALGO[3][3]
+    fout_gexf_name = 'output/gexf/' + tag_PR[3] + '_' + tag_ALGO[3][3]
+    fout_degree_gexf = my_degree_centrality(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+
+    fout_top10_csv_name = 'output/csv/' + tag_PR[3] + '_' + tag_ALGO[3][4]
+    fout_gexf_name = 'output/gexf/' + tag_PR[3] + '_' + tag_ALGO[3][4]
+    fout_eigen_gexf = my_eigen(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
 # PR3b
 if False:
@@ -95,7 +109,7 @@ if False:
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][2]
     fout_katz_gexf = my_katz(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
-if True:
+if False:
     fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][1]
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][1]
     fout_pagerank_gexf = my_pagerank(fin_gexf, fout_top10_csv_name, fout_gexf_name)
