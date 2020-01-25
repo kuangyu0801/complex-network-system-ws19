@@ -4,13 +4,13 @@ import csv
 from myFunc import *
 
 
-def my_harmonic(fin_gexf, fout_top10_csv_name, fout_gexf_name):
+def my_harmonic(fin_gexf, fout_csv_name, fout_gexf_name):
 
     tag_PR = '3a'
     tag_ALGO = 'harmonic_centrality'
     fout_top10_csv = 'output/csv/' + tag_PR + '_' + tag_ALGO + '_top10.csv'
     fout_gexf = 'output/gexf/' + tag_PR + '_' + tag_ALGO + '.gexf'
-
+    fout_csv = fout_csv_name + '.csv'
     dict_name = {}
     dict_order = {}
     G = nx.read_gexf(fin_gexf)
@@ -27,20 +27,8 @@ def my_harmonic(fin_gexf, fout_top10_csv_name, fout_gexf_name):
 
     # return a sorted list of tuple (name_index, harmonic value)
     list_harmo_sorted = sorted(dict_order.items(), key=lambda kv: (kv[1], kv[0]), reverse = True)
-
-    with open(fout_top10_csv, 'w', newline='') as outputFile:
-
-        write_File = csv.writer(outputFile)
-        for i in range(0, 10):
-            x = list_harmo_sorted[i]
-            node = dict_name[x[0]]
-            value = dict_harmo[node]
-            write_File.writerow([node, value])
-            print('%s has harmonic %f :' % (node, value))
-            if value != x[1]:
-                print('dictionary lookup error')
-
+    my_dict2csv(dict_harmo, fout_csv)
     my_dictop2csv(dict_harmo, fout_top10_csv, tag_ALGO)
     my_addattr2node(G, dict_harmo, fout_gexf, tag_ALGO)
     my_PrintTag(tag_PR, tag_ALGO)
-    return fout_gexf
+    return fout_gexf, dict_harmo

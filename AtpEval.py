@@ -1,18 +1,14 @@
 import networkx as nx
+from myFunc import *
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+my_path = os.path.abspath(__file__)
 
-print(list(range(1, 20)))
-print(list(range(1996, 2017)))
+list_alpha = list()
+max_alpha = 1
+for i in range(1, 10):
+    list_alpha.append(i * 0.1)
 
-list_year = list(range(1996, 2017))
-print(list_year)
-list_test = [2017]
-print(list_test)
-input_file_name = 'data/match_scores_2017_unindexed_csv.csv'
-output_file_name = 'data/test.csv'
-tag = '2015-197'
-info = int(tag[0:4])
-print(info)
-if info in list_year:
-    print('yes')
-else:
-    print('no')
+print(list_alpha)
+print(0.1*3)

@@ -24,5 +24,5 @@ def my_pagerank(fin_gexf, fout_top10_csv_name, fout_gexf_name):
 
     fout_gexf = fout_gexf_name + '_alpha_' + str(list_alpha[16]) + '.gexf'
     attrG = my_addattr2node(G, dict_pagerank, fout_gexf, tag_ALGO)
-    return fout_gexf
+    return fout_gexf, dict_pagerank
 

@@ -89,30 +89,35 @@ if True:
 
     fout_top10_csv_name = 'output/csv/' + tag_PR[3] + '_' + tag_ALGO[3][1]
     fout_gexf_name = 'output/gexf/' + tag_PR[3] + '_' + tag_ALGO[3][1]
-    fout_harm_gexf = my_harmonic(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+    fout_harm_gexf, dict_harmo = my_harmonic(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
     fout_top10_csv_name = 'output/csv/' + tag_PR[3] + '_' + tag_ALGO[3][2]
     fout_gexf_name = 'output/gexf/' + tag_PR[3] + '_' + tag_ALGO[3][2]
-    fout_between_gexf = my_betweeness(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+    fout_between_gexf, dict_between = my_betweeness(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
     fout_top10_csv_name = 'output/csv/' + tag_PR[3] + '_' + tag_ALGO[3][3]
     fout_gexf_name = 'output/gexf/' + tag_PR[3] + '_' + tag_ALGO[3][3]
-    fout_degree_gexf = my_degree_centrality(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+    fout_degree_gexf, dict_degree = my_degree_centrality(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
     fout_top10_csv_name = 'output/csv/' + tag_PR[3] + '_' + tag_ALGO[3][4]
     fout_gexf_name = 'output/gexf/' + tag_PR[3] + '_' + tag_ALGO[3][4]
-    fout_eigen_gexf = my_eigen(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+    fout_eigen_gexf, dict_eigen = my_eigen(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+
+    my_dict2scatter(dict_degree, dict_harmo, tag_ALGO[3][3], tag_ALGO[3][1], tag_PR[3])
+    my_dict2scatter(dict_degree, dict_between, tag_ALGO[3][3], tag_ALGO[3][2], tag_PR[3])
+    my_dict2scatter(dict_degree, dict_eigen, tag_ALGO[3][3], tag_ALGO[3][4], tag_PR[3])
 
 # PR3b
 if False:
     fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][2]
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][2]
-    fout_katz_gexf = my_katz(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+    fout_katz_gexf, dict_katz = my_katz(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
-if False:
     fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][1]
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][1]
-    fout_pagerank_gexf = my_pagerank(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+    fout_pagerank_gexf, dict_pagerank = my_pagerank(fin_gexf, fout_top10_csv_name, fout_gexf_name)
+
+    my_dict2scatter(dict_pagerank, dict_katz, tag_ALGO[6][1], tag_ALGO[6][2], tag_PR[6])
 
 # PR4a
 if False:

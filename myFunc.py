@@ -67,8 +67,8 @@ def my_PrintTag(tag_PR, tag_ALGO):
 
 
 def my_dict2csv(dict_original, f_out_csv):
-    write_file = csv.writer(outputFile)
     with open(f_out_csv, 'w', newline='') as outputFile:
+        write_file = csv.writer(outputFile)
         for key in dict_original.keys():
             value = dict_original[key]
             write_file.writerow([key, value])
@@ -135,6 +135,20 @@ def my_plothist(list_in, tag_title, tag_x, tag_y, fout_png):
     plt.grid(True)
     plt.savefig(fout_png)
     print('[Output]' + fout_png)
+    return True
+
+
+def my_dict2scatter(dict_x, dict_y, tag_x, tag_y, tag_PR):
+    list_x = list()
+    list_y = list()
+    for node in dict_x.keys():
+        list_x.append(dict_x[node])
+        list_y.append(dict_y[node])
+
+    fout_png = 'output/pic/' + tag_PR + '_' + tag_x + '-' + tag_y + 'plot' + '.png'
+    tag_title = tag_x + '-' + tag_y + 'plot'
+    my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y, fout_png, False)
+
     return True
 
 
