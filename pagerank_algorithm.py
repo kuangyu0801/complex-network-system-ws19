@@ -5,24 +5,24 @@ from myFunc import *
 import numpy
 
 
-tag_PR = '3b'
-tag_ALGO = 'pagerank'
-fin_gexf = 'data/Graph_atp_match_2017.gexf'
-fout_top10_csv = 'output/csv/' + tag_PR + '_' + tag_ALGO + 'top10.csv'
-fout_gexf = 'output/gexf/' + tag_PR + '_' + tag_ALGO + '.gexf'
+def my_pagerank(fin_gexf, fout_top10_csv_name, fout_gexf_name):
 
-list_alpha = []
-max_range = 20
-#making a choice of alph between 0.05 to 1
-for i in range(0, max_range):
-    list_alpha.append( round( (i+1) * (1/max_range), 2))
+    tag_PR = '3b'
+    tag_ALGO = 'pagerank'
+    list_alpha = []
+    max_range = 20
+    #making a choice of alph between 0.05 to 1
+    for i in range(0, max_range):
+        list_alpha.append(round((i+1) * (1/max_range), 2))
 
-attrG = nx.Graph()
-G = nx.read_gexf(fin_gexf)
+    G = nx.read_gexf(fin_gexf)
+    #  pagerank(G, alpha=0.85, personalization=None, max_iter=100, tol=1e-06, nstart=None, weight='weight', dangling=None)
+    dict_pagerank = nx.pagerank(G, alpha=list_alpha[16], weight='weight') # alpha is chosen to be 0.85
 
-#  pagerank(G, alpha=0.85, personalization=None, max_iter=100, tol=1e-06, nstart=None, weight='weight', dangling=None)
+    fout_top10_csv = fout_top10_csv_name + '_alpha_' + str(list_alpha[16]) + '_top10.csv'
+    my_dictop2csv(dict_pagerank, fout_top10_csv, tag_ALGO)
 
-dict_pagerank = nx.pagerank(G, alpha=list_alpha[16], weight='weight')
-my_dictop2csv(dict_pagerank, fout_top10_csv, tag_ALGO)
-attrG = my_addattr2node(G, dict_pagerank, fout_gexf, tag_ALGO)
+    fout_gexf = fout_gexf_name + '_alpha_' + str(list_alpha[16]) + '.gexf'
+    attrG = my_addattr2node(G, dict_pagerank, fout_gexf, tag_ALGO)
+    return fout_gexf
 

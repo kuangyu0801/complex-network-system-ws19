@@ -118,6 +118,7 @@ def my_addattr2node(G, dict_attribute, f_out_gexf, tag_ALGO):
     for node in dict_attribute.keys():
         nG.nodes[node][tag_ALGO] = dict_attribute[node]
     nx.write_gexf(nG, f_out_gexf)
+    my_PrintOutFile(f_out_gexf)
     return nG
 
 

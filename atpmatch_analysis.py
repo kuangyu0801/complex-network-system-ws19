@@ -81,20 +81,21 @@ if False:
     fout_max_clique_gexf = 'output/gexf/' + tag_PR[2] + '_' + tag_ALGO[2][4] + '.gexf'
     maxclique_G = my_maxclique(fin_gexf, fout_max_clique_gexf)
 
+#TODO Try to merge all requirement from 3a to 3b into single csv
+#TODO Try to merge all node attribute in on graph
+
 # PR3a
 if False:
     fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][1]
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][1]
 
 # PR3b
-if True:
+if False:
     fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][2]
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][2]
     fout_katz_gexf = my_katz(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
-#TODO Try to merge all requirement from 3a to 3b into single csv
-#TODO Try to merge all node attribute in on graph
-if False:
+if True:
     fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][1]
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][1]
     fout_pagerank_gexf = my_pagerank(fin_gexf, fout_top10_csv_name, fout_gexf_name)
