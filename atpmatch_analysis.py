@@ -107,7 +107,7 @@ if False:
     my_dict2scatter(dict_degree, dict_eigen, tag_ALGO[3][3], tag_ALGO[3][4], tag_PR[3])
 
 # PR3b
-if True:
+if False:
     fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][2]
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][2]
     fout_katz_gexf, dict_katz = my_katz(fin_gexf, fout_top10_csv_name, fout_gexf_name)
@@ -119,9 +119,9 @@ if True:
     my_dict2scatter(dict_pagerank, dict_katz, tag_ALGO[6][1], tag_ALGO[6][2], tag_PR[6])
 
 # PR4a
-if False:
+if True:
     fout_random_name = 'output/gexf/' + tag_PR[4] + '_' + tag_ALGO[4][1] + '_'
-    ftxt_out = 'output/' + tag_PR[2] + '_' + tag_ALGO[4][1] + '.txt'
+    ftxt_out = 'output/' + tag_PR[4] + '_' + tag_ALGO[4][1] + '.txt'
 
     fout_random_gexf = my_randomgraph(fin_gexf, fout_random_name)
     my_property(fout_random_gexf, ftxt_out)  # property_analysis
