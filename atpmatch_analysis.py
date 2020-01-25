@@ -10,12 +10,20 @@ from distance_distribution_algorithm import *
 from k_core_algorithm import *
 from random_graph_algorithm import *
 from preferential_attachment_algorithm import *
+from pagerank_algorithm import *
+from katz_centrality_algorithm import *
+# from harmonic_centrality_algorithm import *
+# from degree_centrality_algorithm import *
+# from eigen_centrality_algorithm import *
+# from betweeness_centrality_algorithm import *
+
 
 #TODO making this a interactive on terminal so we won't always executing whole function
 tag_PR = {2: '2', 3: '3a', 6: '3b', 4: '4a', 8: '4b'}
 tag_ALGO = {2: {1: 'property_analysis', 2: 'ego_network', 3: 'distance_distribution',
                 5: 'clustering_coeff', 4: 'max_clique', 6: 'k_core'},
-            3: {1: 'degree_centrality'},
+            3: {1: 'harmonic_centrality', 2: 'betweenness_centrality', 3: 'degree_centrality', 4: 'eigen_centrality'},
+            6: {1: 'pagerank', 2: 'Katz_centrality'},
             4: {1: 'random_graph'},
             8: {1: 'samllworld', 2: 'preferential_attachment '}
             }
@@ -74,10 +82,22 @@ if False:
     maxclique_G = my_maxclique(fin_gexf, fout_max_clique_gexf)
 
 # PR3a
+if False:
+    fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][1]
+    fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][1]
 
 # PR3b
+if True:
+    fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][2]
+    fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][2]
+    fout_katz_gexf = my_katz(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
 #TODO Try to merge all requirement from 3a to 3b into single csv
+#TODO Try to merge all node attribute in on graph
+if False:
+    fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][1]
+    fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][1]
+    fout_pagerank_gexf = my_pagerank(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
 # PR4a
 if False:
@@ -101,7 +121,7 @@ if False:
     # calculating small-worldness with my own graph
     my_calsmallworldness(G, fout_txt)
 
-if True:
+if False:
     fout_txt = 'output/' + tag_PR[8] + '_' + tag_ALGO[8][2] + '.txt'  # my network
 
     fout_pre_attach_gexf = my_preferattach(fin_gexf)

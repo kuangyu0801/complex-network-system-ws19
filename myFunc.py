@@ -96,7 +96,7 @@ def my_dicsort2csv(dict_original, f_out_csv, en_reverse, tag_ALGO):
             node = dict_name[x[0]]
             value = dict_original[node]
             write_file.writerow([node, value])
-            print('%s has %s  %f :' % (node, tag_ALGO , value))
+            print('%s has %s  %f :' % (node, tag_ALGO, value))
             if value != x[1]:
                 print('dictionary lookup error')
     my_PrintOutFile(f_out_csv)
