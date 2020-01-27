@@ -20,6 +20,8 @@ def my_pagerank(fin_gexf, fout_top10_csv_name, fout_gexf_name):
     dict_pagerank = nx.pagerank(G, alpha=list_alpha[16], weight='weight') # alpha is chosen to be 0.85
 
     fout_top10_csv = fout_top10_csv_name + '_alpha_' + str(list_alpha[16]) + '_top10.csv'
+    fout_csv = fout_top10_csv_name + '_alpha_' + str(list_alpha[16]) + '.csv'
+    my_dict2csv(dict_pagerank, fout_csv)
     my_dictop2csv(dict_pagerank, fout_top10_csv, tag_ALGO)
 
     fout_gexf = fout_gexf_name + '_alpha_' + str(list_alpha[16]) + '.gexf'

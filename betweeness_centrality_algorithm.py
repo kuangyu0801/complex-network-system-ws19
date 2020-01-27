@@ -7,7 +7,7 @@ def my_betweeness(fin_gexf, fout_csv_name, fout_gexf_name):
     tag_PR = '3a'
     tag_ALGO = 'betweenness_centrality'
     fout_top10_csv = fout_csv_name + '_top10.csv'
-    fout_gexf = 'output/' + tag_PR + '_' + tag_ALGO + '.gexf'
+    fout_gexf = 'output/gexf/' + tag_PR + '_' + tag_ALGO + '.gexf'
     fout_csv = fout_csv_name + '.csv'
 
     G = nx.read_gexf(fin_gexf)

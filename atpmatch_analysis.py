@@ -81,9 +81,7 @@ if False:
     maxclique_G = my_maxclique(fin_gexf, fout_max_clique_gexf)
 
 #TODO Try to merge all requirement from 3a to 3b into single csv
-#TODO Try to merge all node attribute in on graph
 
-# PR3a
 if False:
 
     fout_top10_csv_name = 'output/csv/' + tag_PR[3] + '_' + tag_ALGO[3][1]
@@ -112,14 +110,31 @@ if False:
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][2]
     fout_katz_gexf, dict_katz = my_katz(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
+if False:
     fout_top10_csv_name = 'output/csv/' + tag_PR[6] + '_' + tag_ALGO[6][1]
     fout_gexf_name = 'output/gexf/' + tag_PR[6] + '_' + tag_ALGO[6][1]
     fout_pagerank_gexf, dict_pagerank = my_pagerank(fin_gexf, fout_top10_csv_name, fout_gexf_name)
 
-    my_dict2scatter(dict_pagerank, dict_katz, tag_ALGO[6][1], tag_ALGO[6][2], tag_PR[6])
+    my_dict2scatter(dict_pagerank, dict_katz, tag_ALGO[6][1] + 'test', tag_ALGO[6][2] + 'test', tag_PR[6])
+
+# output all attribute from csv file
+if False:
+    attrG = G.copy()
+    fout_gexf = 'output/gexf/3_1996-2016_attibute.gexf'
+    fin_csv = {'harmonic_centrality': 'output/csv/3a_harmonic_centrality.csv',
+               'betweenness_centrality': 'output/csv/3a_betweenness_centrality.csv',
+               'degree_centrality': 'output/csv/3a_degree_centrality.csv',
+               'eigen_centrality': 'output/csv/3a_eigen_centrality.csv',
+               'Katz_centrality': 'output/csv/3b_Katz_alpha0.002_beta1.0.csv',
+               'pagerank': 'output/csv/3b_pagerank_alpha_0.85.csv'
+               }
+    for key in fin_csv.keys():
+        dict_out = my_csv2dict(fin_csv[key])
+        attrG = my_addattr2node(attrG, dict_out, fout_gexf, key)
+
 
 # PR4a
-if True:
+if False:
     fout_random_name = 'output/gexf/' + tag_PR[4] + '_' + tag_ALGO[4][1] + '_'
     ftxt_out = 'output/' + tag_PR[4] + '_' + tag_ALGO[4][1] + '.txt'
 

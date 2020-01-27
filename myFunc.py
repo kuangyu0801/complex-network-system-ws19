@@ -2,6 +2,7 @@ import networkx as nx
 import csv
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.special import factorial
 
 
 def my_gexfwrite(G, fout_gexf):
@@ -66,6 +67,16 @@ def my_PrintTag(tag_PR, tag_ALGO):
     print('========[PR:' + tag_PR + '][ALGO:' + tag_ALGO + ']  RESULT: SUCCESS========')
 
 
+def my_csv2dict(fin_csv):
+    dict_out = dict()
+    with open(fin_csv, newline='') as inputFile:
+        read_file = csv.reader(inputFile)
+        iter_rows = iter(read_file)
+        for row in iter_rows:
+            dict_out[row[0]] = row[1]
+    return dict_out
+
+
 def my_dict2csv(dict_original, f_out_csv):
     with open(f_out_csv, 'w', newline='') as outputFile:
         write_file = csv.writer(outputFile)
@@ -127,7 +138,7 @@ def my_plothist(list_in, tag_title, tag_x, tag_y, fout_png):
 
     plt.cla()  # clear previous plot
     # the histogram of the data
-    n, bins, patches = plt.hist(list_in, 40, density=True, facecolor='g')
+    n, bins, patches = plt.hist(list_in, round(max(list_in)-min(list_in)), density=True, facecolor='g')
 
     plt.xlabel(tag_x)
     plt.ylabel(tag_y)
@@ -150,6 +161,21 @@ def my_dict2scatter(dict_x, dict_y, tag_x, tag_y, tag_PR):
     my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y, fout_png, False)
 
     return True
+
+# poisson
+
+
+def my_poisson(lambda_in):
+    list_s = np.random.poisson(lambda_in, 10000)
+    fout_png = 'output/pic/' + 'poisson_lambda_' + str(lambda_in) + '_hist' + '.png'
+    tag_title = 'Poisson Distribution Histogram'
+    my_plothist(list_s, tag_title, 'Degree k', 'Probability', fout_png)
+    if False:
+        t = np.arange(0, 100, 0.1)
+        d = np.exp(-lambda_in) * np.power(lambda_in, t) / factorial(t)
+        plt.plot(t, d, 'bs')
+        plt.savefig(fout_png)
+
 
 
 # save scatter plot with control flag en_log

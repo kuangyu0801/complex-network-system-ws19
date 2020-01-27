@@ -34,7 +34,7 @@ def my_property(fin_gexf, ftxt_out):
 
     # number of triangle
     dict_trian = nx.triangles(G)  # returning a dictionary
-    g_num_trian = sum(list(dict_trian.values()))/3 # a triangle is counted 3 times (1 for each node)
+    g_num_trian = sum(list(dict_trian.values()))/3  # a triangle is counted 3 times (1 for each node)
 
     # number of clique
     l_clique = list(nx.find_cliques(G))

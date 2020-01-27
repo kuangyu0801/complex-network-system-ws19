@@ -19,15 +19,10 @@ def my_kcore(fin_gexf, fout_nx_gexf_name, fout_my_gexf_name):
 
         # Step 1- remove all nodes from the original graph that have a degree smaller than k
         # and all the incident nodes*
-        # TODO could be simplified by using G.adj
         for i_node in list(G.nodes):
-            #print(tmpG.degree(i_node))
             if (tmpG.has_node(i_node) == True) and (tmpG.degree(i_node) < cur_k):
                 nbr_nodes = tmpG.neighbors(i_node)
                 tmpG.remove_node(i_node)
-                #print('remove node: ' + i_node)
-                #TODO not sure about this part
-                #tmpG.remove_nodes_from(nbr_nodes)
         # Step 2– remove nodes that have fewer than k neighbors
         for i_node in list(tmpG.nodes):
             if (tmpG.has_node(i_node) == True) and len(list((tmpG.neighbors(i_node)))) < cur_k:
@@ -48,8 +43,8 @@ def my_kcore(fin_gexf, fout_nx_gexf_name, fout_my_gexf_name):
     final_k = (cur_k+1)
     print('final_k: %d' % int(cur_k+1))
 
-    fout_my_gexf =  fout_nx_gexf_name + '_k_' + str(final_k) + '_my.gexf'
-    fout_nx_gexf = fout_my_gexf_name + '_k_' + str(final_k) + '_nx.gexf'
+    fout_my_gexf = fout_my_gexf_name + '_k_' + str(final_k) + '_my.gexf'
+    fout_nx_gexf = fout_nx_gexf_name + '_k_' + str(final_k) + '_nx.gexf'
     nx.write_gexf(kG, fout_nx_gexf)
     nx.write_gexf(curG, fout_my_gexf)
 
