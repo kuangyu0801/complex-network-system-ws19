@@ -11,6 +11,8 @@
 \usepackage{float}
 \usepackage{subfloat}
 \usepackage{caption}
+\usepackage{mathtools}
+\usepackage{array}
 
 \begin{document}
 %
@@ -49,120 +51,43 @@ Each node represent a tennis player. An edge represents a match fought between t
 To simplify the analysis of network, I chose my network to be a undirected graph with weighted edge.
 After constructing the network, there are 3,035 nodes and 45,563 edges
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{0_simple_example}
+\caption{An example of constructing network.} \label{fig_0_simple_example}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{0_rawcsvdata}
+\caption{Raw Data} \label{fig_rawdata}
+\end{figure}
+
+
 Fig.~\ref{fig_0_simple_example} gives a zoomed in part of my tennis player network.
 Fig.~\ref{fig_mynk} shows the complete graph of my network.
-
-For citations of references, we prefer the use of square brackets
-and consecutive numbers. The following bibliography provides
-a sample reference list with entries for journal
-articles~\cite{ref_article1}, a book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
-and a homepage~\cite{ref_url1}. Multiple citations are grouped
-\cite{ref_article1,ref_book1},
-\cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
+Fig.~\ref{fig_rawdata} shows the raw data of my statistics. Using Python parsing the raw data, I parsed only the winner and loser of each match and used the data to construct my network.
+Even though both winner and loser are used as node, the undirected edge cannot provide any info about how many much a player wins over another player. There are no self-loops to be removed since ,obviously, a player cannot fight against himself, unless the raw data is flawed. There are no disconnected nodes in the network. All nodes are in a single component. Analysis of the following sections are all implemented through Python and using the network analysis library NetworkX. The representation of network employs software Gephi. The source code and data can be found in \cite{ref_url1} and \cite{ref_url2}. 
+From the graph of the network, a dense oval-shaped area is in the center of the graph. These are the player with higher degree, which means they are either playing many matches or constantly winning. Among these area are some of the most prominent players in the last two decades such as Roger Federer, Rafael Nadal, Pete Sampras and Andrew Agasi. The outer rim of the graph are players with only few connection with the nodes in the oval area. These players are less competitive than others. Three colors are shown to indicate to communities for each player based on modularity. We will discuss the communities in later section. In the graph, the size of a node is proportional to the number of degree. To make the big nodes prominent, the scaling of size is approximated by non-linear function.
 
 
-\begin{figure}
-\includegraphics[width=\textwidth]{0_simple_example}
-\caption{A figure caption is always placed below the illustration.
-Please note that short captions are centered, while long ones are
-justified by the macro package automatically.} \label{fig_0_simple_example}
-\end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics[width=\textwidth]{1_graph}
-\caption{A figure caption is always placed below the illustration.
-Please note that short captions are centered, while long ones are
-justified by the macro package automatically.} \label{fig_mynk}
+\caption{Tennis Player Network 1996~2016} \label{fig_mynk}
 \end{figure}
 
+
+% Section Structural Insight
+\todo{add other ranking graph}
 
 \section{Structural Insight}
-Here goes all the analysis of your network. Fig.~\ref{fig_2_Degree_dist_hist} gives an example of a figure.
 
-
-% Figure for Network Analysis Section
-
-\begin{figure}
-    \centering
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{2_Degree_dist_hist} % first figure itself
-        \caption{Degree dist. Histogram}
-        \label{fig_2_Degree_dist_hist}
-    \end{minipage}\hfill
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{2_Degree_dist_log} % second figure itself
-        \caption{Degree dist. logscale}
-        \label{fig_2_Degree_dist_log}
-    \end{minipage}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{2_clustering_coeff} % first figure itself
-        \caption{Clustering Coeff}
-        \label{fig_2_clustering_coeff}
-    \end{minipage}\hfill
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{2_clustering_coeff_log} % second figure itself
-        \caption{Clustering Coeff logscale}
-        \label{fig_2_clustering_coeff_log}
-    \end{minipage}
-\end{figure}
-
-
-\begin{figure}
-\includegraphics[width=\textwidth]{2_distance_distribution_hist}
-\caption{Distance Distribution} \label{fig_2_distance_distribution_hist}
-\end{figure}
-
-
-\begin{figure}
-\includegraphics[width=\textwidth]{2_distance_distribution_hist}
-\caption{Distance Distribution} \label{fig_2_distance_distribution_hist}
-\end{figure}
-
-
-\begin{figure}
-\includegraphics[width=\textwidth]{2_distance_distribution_hist}
-\caption{Distance Distribution} \label{fig_2_distance_distribution_hist}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\textwidth]{2_ego_FEDERER}
-\caption{Federer Ego Network} \label{fig_22_ego_FEDERER}
-\end{figure}
-
-
-\begin{figure}
-    \centering
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{2_k_core_my} % first figure itself
-        \caption{78-Core Graph}
-        \label{fig_2_k_core_my}
-    \end{minipage}\hfill
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{2_max_clique} % second figure itself
-        \caption{Maximal Clique}
-        \label{fig_2_max_clique}
-    \end{minipage}
-\end{figure}
-
-
-Table~\ref{tab_my} an example of a table.
-\todo{make table in the center}
-
-Table~\ref{tab_ego} an example of a table.
-
-% Table for Structural Insight Section
-\begin{table}
-\caption{Structural Metrics of my network.}\label{tab_my}
+The structural insight basically follows the project requirement provide through the exercises.  My expectation for the network before starting analysis is as follow: 
+First, the graph would be well connected with small diameter. The maximal stage of a 128-player tournament is 7. The diameter should just be a little higher than this. Second, I expected the clustering coefficient to be higher than 0.2, which is a average number from social network. Tennis player network tends to engage more than everyday social interaction. Third, the average path length is also expected to be shorter for the same reason given above. Last, I expect one of the centralities can provide a better evaluation of player in real world. With that being said, I hope one of the centrality rank cab be more representative than or comparable to the current ranking systems.
+Using NetworkX, I am able to compute the structural metric for my network.
+\begin{table}[H]
+\centering
+\caption{Structural metrics of my network.}\label{tab_my}
 \begin{tabular}{|l|l|}
 \hline
 metric & value \\
@@ -183,9 +108,60 @@ number of component & 1\\
 \end{table}
 
 
+Table~\ref{tab_my} listed the structural metrics from my player network. Several things are worth mentioning here. First, number of  triangles is divided by 3 because the NetworkX function counted a triangle 3 times, each node for a time. The average clustering coefficient is the average of all local clustering coefficient. In here, the calculation of local clustering coefficient takes the weighted edge into account. The detail of formula can be found in \cite{ref_url_cluster_coeff} Therefore, the average clustering coefficient is not transitivity, which is derived from formula in textbook
 
+Both diameter, average shortest path length are low as expected. Further, the clustering coefficient is 0.35. This number is very high, compared with 0.20 in network of film actor collaborations, 0.09 in network of collaborations between biologists and 0.16 in a network of people who sends email to whom in a large university. There is only one component.
+
+Looking further into distance distribution in Fig.~\ref{fig_2_distance_distribution_hist}, we can see that the majority of shortest path is around average 3.26 and the portion decrease drastically when shortest path increased. There are only neglectable amount of players with length over 5.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{2_distance_distribution_hist}
+\caption{Distance Distribution} \label{fig_2_distance_distribution_hist}
+\end{figure}
+
+
+Histogram of degree distribution and log-scale scatter plot are shown in  Fig.~\ref{fig_2_Degree_dist_hist} and Fig.~\ref{fig_2_Degree_dist_log}. The plot behaves similarity with the scale-free network. Further comparison of my network with  a self-generated preferential attachment network will be discussed in the Network Model
+ section. 
+ 
+ \begin{figure}
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2_Degree_dist_hist} % first figure itself
+        \caption{Degree dist. Histogram}
+        \label{fig_2_Degree_dist_hist}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2_Degree_dist_log} % second figure itself
+        \caption{Degree dist. logscale}
+        \label{fig_2_Degree_dist_log}
+    \end{minipage}
+\end{figure}
+ 
+Scatter plot of clustering coefficient to degree is shown in Fig.~\ref{fig_2_clustering_coeff} and Fig.~\ref{fig_2_clustering_coeff_log}. From the log-scale, we can see that the clustering coefficient is proportional to the degree. This can well be explained by the fact that the more matches a player has fought the more likely a player is good player. Therefore, good player is more prone to play with other equally good player since the match is single elimination.
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2_clustering_coeff} % first figure itself
+        \caption{Clustering Coeff}
+        \label{fig_2_clustering_coeff}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2_clustering_coeff_log} % second figure itself
+        \caption{Clustering Coeff logscale}
+        \label{fig_2_clustering_coeff_log}
+    \end{minipage}
+\end{figure}
+
+As requested, an subgraph with node's degree higher than 10 is shown in Fig.~\ref{fig_1_subgraph}. The outer rim of the nodes are all excluded in this graph and only leaves with center oval dense area. This can well be understood that nodes in outer rim have less connection with other nodes. It reflects a large portion of players play few matches.
 
 \begin{table}
+\centering
 \caption{Structural Metrics of ego network.}\label{tab_ego}
 \begin{tabular}{|l|l|}
 \hline
@@ -201,13 +177,58 @@ average clustering coefficient & 0.028295 \\
 transitivity & 0.589713 \\ 
 number of triangle & 404,647 \\ 
 number of clique & 5,621,903 \\ 
-number of component & 1 \\ 
-\hline
+number of component & 1 \\ \hline
 \end{tabular}
 \end{table}
 
-Table~\ref{tab_kcore} an example of a table.
-\begin{table}
+An ego network for Roger Federer is constructed and is shown in Fig.~\ref{fig_2_ego_FEDERER}.Table~\ref{tab_ego} listed the structural metrics of Roger Federer ego network. Roger Federer was chosen because he ranked first in Eigen centrality, Katz centrality and Page Rank. Two noticeable metrics in this network are diameter and transitivity. The diameter becomes much smaller with the order of network significantly reduced. The transitivity becomes a lot higher, almost twice of player network. This indicates that the players fighting Federer are more likely to fight each other. It actually makes sense. Given that Federer is top-ranked player, the players fighting Federer may be more likely to be top ranked.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.05]{1_subgraph}
+\caption{Subgraph with degree larger than 10} \label{fig_1_subgraph}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.1]{2_ego_FEDERER}
+\caption{Federer Ego Network} \label{fig_2_ego_FEDERER}
+\end{figure}
+
+In both player network and subgraph, three colors are presented to indicate community. This is done based on modularity function in Gephi. Why there are three big communities can be further explained through looking "big" nodes in their own community. Fig.~\ref{fig_2_player_pos} points out some of the important node in each community. I make a calculation of number of nodes in each community. It turns out that the green community comprises of 9\% of all nodes, the blue 22 \%, and the purple 67 \%. After pointing out the important/typical player of each community, I landed on a explanation for these three communities. The green community represents players who have an early retirement. Sampras and Agasi are typical example of this community.The blue community represents players who are both good and enjoys a long career. Federer, Nadal and Štěpánek makes typical examples. The purple community represents players who are somewhat ok but also enjoys a long career. Mischa Zverev and Rajeev Ram are examples. This is why the blue community is in between purple and green ones because players who retires early would not have a chance to fight newly-joined or currently-active players. Moreover, we can also conclude that young players will certainly not in the green community. He will belongs to blue community if he is a good player. Dominic Thiem is a good example for this case. The dashed line shown in Fig.~\ref{fig_2_player_pos} can roughly used to separate good players with mediocre players. I prefer to call it the "competitive oval." Players inside the oval span across all three community. The further insight of these players will be discussed in later section.
+
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{2_player_pos}
+\caption{Federer Ego Network} \label{fig_2_player_pos}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2_k_core_my} % first figure itself
+        \caption{78-Core Graph}
+        \label{fig_2_k_core_my}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2_max_clique} % second figure itself
+        \caption{Maximal Clique}
+        \label{fig_2_max_clique}
+    \end{minipage}
+\end{figure}
+
+A 78-core graph is shown in Fig.~\ref{fig_2_k_core_my} and its structural metrics is shown in Table.~\ref{tab_ego}. 78-core is the largest core found in my player network. As requested, I implemented the process of finding k-core myself and compared the result from the k-core from NetworkX narrative function. In the end, two functions come up with the exact result. The k-core implementation code can be found in the source code.
+\todo{adding source code citation}
+The transitivity is over 0.7. This is very logical due to the definition of core.
+A graph consists of 3 maximal cliques shown inFig.~\ref{fig_2_max_clique} and its structural metrics is shown in Table~\ref{tab_kcore}. Three maximal cliques are found in total, each with 43 nodes.
+
+\begin{table}[H]
+\centering
 \caption{Structural Metrics of k-core network.}\label{tab_kcore}
 \begin{tabular}{|l|l|}
 \hline
@@ -230,40 +251,50 @@ number of component & 1 \\
 
 
 
-
-
-
+ % Centrality Insight
+ 
 \section{Centrality Insight}
 
-Table~\ref{tab_h_vs_b} an example of a table.
-Table~\ref{tab_degree_vs_eigen} an example of a table.
-Table~\ref{tab_katz_vs_page} an example of a table.
+In this section, 6 different kinds of centralities are discussed. Katz centrality and Eigen centrality are the most aligned with real-world ranking. All of the centralities are calculated by the adoption of NetworkX's native functions with weighed edge enabled. The harmonic centrality is calculated from the normalized result of harmonic function. The normalization is computed by dividing node order minus one. The poor performance of Eigen centrality in directed networks is another reason I decided to make the tennis player network an undirected graph.
 
 \begin{table}
-\centering
-\caption{Harmonic vs. Betweenness}\label{tab_h_vs_b}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
+\caption{Harmonic vs Betweenness vs Degree}\label{tab_total_compare}
+\begin{tabular}{|l|l|l|l|l|l|l|} \hline
+\# & Harmonic & H_{i} & Betweenness & B_{i} & Eigen & k_{i} \\ \hline
+1 & JAN-HERNYCH & 0.458 & RAJEEV-RAM & 0.016 & TOMMY-HAAS & 0.106 \\ \hline
+2 & RAJEEV-RAM & 0.453 & MISCHA-ZVEREV & 0.016 & ROGER-FEDERER & 0.1 \\ \hline
+3 & MICHAEL-BERRER & 0.449 & MICHAL-PRZYSIEZNY & 0.016 & MIKHAIL-YOUZHNY & 0.098 \\ \hline
+4 & SIMONE-BOLELLI & 0.449 & ANDREY-GOLUBEV & 0.012 & RAINER-SCHUETTLER & 0.098 \\ \hline
+5 & ANDREY-GOLUBEV & 0.449 & SERGIY-STAKHOVSKY & 0.012 & JARKKO-NIEMINEN & 0.098 \\ \hline
+6 & VICTOR-HANESCU & 0.449 & GEORGE-BASTL & 0.012 & LLEYTON-HEWITT & 0.098 \\ \hline
+7 & BJORN-PHAU & 0.448 & MICHAEL-BERRER & 0.012 & FELICIANO-LOPEZ & 0.097 \\ \hline
+8 & MISCHA-ZVEREV & 0.448 & JAN-HERNYCH & 0.011 & TOMMY-ROBREDO & 0.097 \\ \hline
+9 & TEYMURAZ-GABASHVILI & 0.448 & RUBEN-RAMIREZ-HIDALGO & 0.011 & RADEK-STEPANEK & 0.095 \\ \hline
+10 & RADEK-STEPANEK & 0.446 & BJORN-PHAU & 0.01 & CARLOS-MOYA & 0.095 \\ \hline
 
-1 & JAN-HERNYCH & 0.458 & RAJEEV-RAM & 0.016 \\ \hline
-2 & RAJEEV-RAM & 0.453 & MISCHA-ZVEREV & 0.016 \\ \hline
-3 & MICHAEL-BERRER & 0.449 & MICHAL-PRZYSIEZNY & 0.016 \\ \hline
-4 & SIMONE-BOLELLI & 0.449 & ANDREY-GOLUBEV & 0.012 \\ \hline
-5 & ANDREY-GOLUBEV & 0.449 & SERGIY-STAKHOVSKY & 0.012 \\ \hline
-6 & VICTOR-HANESCU & 0.449 & GEORGE-BASTL & 0.012 \\ \hline
-7 & BJORN-PHAU & 0.448 & MICHAEL-BERRER & 0.012 \\ \hline
-8 & MISCHA-ZVEREV & 0.448 & JAN-HERNYCH & 0.011 \\ \hline
-9 & TEYMURAZ-GABASHVILI & 0.448 & RUBEN-RAMIREZ-HIDALGO & 0.011 \\ \hline
-10 & RADEK-STEPANEK & 0.446 & BJORN-PHAU & 0.010 \\ \hline
 \end{tabular}
 \end{table}
 
+Table~\ref{tab_total_compare} shows top 10 of the comparison for three centrality: Harmonic, Betweenness and Degree. There are a great similarity between Harmonic and Betweenness centrality. However, the rank of Degree centrality disagree with the other centrality. How do we explain this? We can start by looking up the names of the players. Jan Hernych is active player, turned pro in 1998 and achieved his career-high singles ranking of World No. 59 in April 2009. Rajeev Ram is also active is active, , turned pro in 2004 and achieved his career-high singles ranking of World No. 56 in April 2016. Both of them are once high ranked players and enjoy long career. They are not top skilled player. But over the course of their career, they have fought with a lots of players. We can look into Fig.~\ref{fig_3a_betweenness_centrality} and Fig.~\ref{fig_3a_harmonic_centrality} for more insights. As we can see, marked red nodes are the top 10 nodes in each centrality ranking and these nodes tend to be spread just the outer side of "competitive" oval. They are located in a position just to each other player with comparative short path. Namely, the ranking of Harmonic and Betweenness centrality reflects more about players career length rather their skill.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{3a_betweenness_centrality}
+\caption{Betweenness Centrality in network} \label{fig_3a_betweenness_centrality}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{3a_harmonic_centrality}
+\caption{Harmonic Centrality in network} \label{fig_3a_harmonic_centrality}
+\end{figure}
+
 \begin{table}
 \centering
-\caption{Degree vs Eigen}\label{tab_degree_vs_eigen}
+\caption{Degree vs Eigen}\label{tab_degree_eigen}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-$\#$ & Degree & value & Eigen & value \\ \hline
+\# & Degree & value & Eigen & value \\ \hline
 1 & TOMMY-HAAS & 0.106 & ROGER-FEDERER & 0.234 \\ \hline
 2 & ROGER-FEDERER & 0.1 & RAFAEL-NADAL & 0.192 \\ \hline
 3 & MIKHAIL-YOUZHNY & 0.098 & NOVAK-DJOKOVIC & 0.188 \\ \hline
@@ -278,13 +309,107 @@ $\#$ & Degree & value & Eigen & value \\ \hline
 \end{tabular}
 \end{table}
 
+	The top 10 Degree and Eigen centrality is shown in Table.~\ref{tab_degree_eigen}. Both centralities agrees with each other. Moreover, the top 10 Eigen centrality is the same as Katz centrality. With Table .~\ref{tab_eigen_real}, we can see that Katz centrality is almost aligned with real performance of players in terms of ranking of grand slam (GS) title, tournament titles and GOAT points. In some way, we can conclude that the number of matches fought by a player reflects the players quantity and competitiveness. For example, in a grand slam tournament with 128 players, the champion has to win 7 consecutive matches. A player who wants to win must play more matches than others. With that being said, the high correlation with degree and Katz centrality is understandable. Looking into Fig.~\ref{fig_3a_degree_centrality} and Fig.~\ref{fig_3a_eigen_centrality}, we can clearly sees that the top 10 plays are more center inside "competitive" oval.
+
+\begin{table}
+\centering
+\caption{Eigen Centrality vs Reality} \label{tab_eigen_real}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+
+\# & Name & Won & Won & GOAT* & Active & Highest Ranking \\ 
+ &  & GS & Title & point & Year & (achieved date) \\ \hline
+1 & Roger Federer & 20 & 103 & 201 & 1998\~ & 1(2004.02) \\ 
+2 & Rafael Nadal & 19 & 84 & 168 & 2001\~ & 1(2008.08) \\ 
+3 & Novak Djokovic & 16 & 77 & 185 & 2003\~ & 1(2011.07) \\ 
+4 & David Ferrer & 0 & 27 & 124 & 2000\~2019 & 3(2013.07) \\ 
+5 & Andy Murray & 3 & 46 & 57 & 2005\~ & 1(2016.11) \\ 
+6 & Tomas Berdych & 0 & 13 & 32 & 2002\~2019 & 4(2015.05) \\ 
+7 & Mikhail Youzhny & 0 & 10 & 27 & 1999\~2019 & 8(2008.01) \\ 
+8 & Andy Roddick & 1 & 32 & 33 & 2000\~2012 & 1(2003.11) \\ 
+9 & Tommy Robredo & 0 & 12 & 32 & 1998\~ & 5(2006.08) \\ 
+10 & Fernando Verdasco & 0 & 7 & 22 & 2001\~ & 7(2009.04) \\ \hline
+
+\end{tabular}
+\end{table}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{3a_degree_centrality}
+\caption{Degree Centrality} \label{fig_3a_degree_centrality}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{3a_eigen_centrality}
+\caption{Eigen Centrality} \label{fig_3a_eigen_centrality}
+\end{figure}
+
+Fig.~\ref{fig_3a_degreebet_centralityplot} and Fig.~\ref{fig_3a_degree_harmonic_centralityplot} shows the scatter plot between betweenness and degree centrality and the one between harmonic and degree centrality. For the between betweenness and degree centrality, we cannot identify a direct correlation for two parameters. For the correlation between harmonic and degree centrality, , the harmonic centrality grows significantly from average degree 0 to 0.02. After that, the growing in harmonic saturates. Although one can say that harmonic is linear to degree, the variation from nodes and almost ceiling value make correlation unrealistic.
+
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{3a_degree_centrality-betweenness_centralityplot} % first figure itself
+        \caption{B_{i} vs. k_{i}}
+        \label{fig_3a_degreebet_centralityplot}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{3a_degree_centrality-harmonic_centralityplot} % second figure itself
+        \caption{H*_{i}  vs.  k_{i}}
+        \label{fig_3a_degree_harmonic_centralityplot}
+    \end{minipage}
+\end{figure}
+
+One the other hand, Fig.~\ref{fig_3a_plot_eigen}  shows that Eigen centrality is close to a exponential function of degree centrality. The correlation of two centrality is evident. However, as the of degree nodes grow higher, the nodes becomes more separated. Using degree centrality as an index for evaluating student is far from ideal. 
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{3a_degree_eigen_plot}
+\caption{ \(E_{i}\) vs. \(k_{i}\)} 
+\label {fig_3a_plot_eigen}
+\end{figure}
+
+
+For Katz centrality, I have choose \(\alpha = 0.9*\frac{1}{\lambda} \) to guarantee the convergence of Katz computation. I have computed rank for 4 different \(\beta\) value, 0.1, 0.2, 0.5 and 1. It turns out that the both the ranks and values to 3 decimal point remain the same regardless of different \(\beta\). \(\beta\) has no influence on top ranked Katz centrality. Moreover, the rank is identical to that of Eigen centrality. This can be understood by the fact that Katz centrality is an adaptation of Eigen centrality with adjustment constant \(\alpha \) and \(\beta\). By comparing the top 10 ranking of Katz centrality to real world statistics of player, we can see that they agree with each other.
+
+
+\begin{table}
+\centering
+\caption{Katz Centrality vs Reality} \label{tab_katz_real}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+
+\# & Name & Won & Won & GOAT* & Active & Highest Ranking \\ 
+ &  & GS & Title & point & Year & (achieved date) \\ \hline
+1 & Roger Federer & 20 & 103 & 201 & 1998\~ & 1(2004.02) \\ 
+2 & Rafael Nadal & 19 & 84 & 168 & 2001\~ & 1(2008.08) \\ 
+3 & Novak Djokovic & 16 & 77 & 185 & 2003\~ & 1(2011.07) \\ 
+4 & David Ferrer & 0 & 27 & 124 & 2000\~2019 & 3(2013.07) \\ 
+5 & Andy Murray & 3 & 46 & 57 & 2005\~ & 1(2016.11) \\ 
+6 & Tomas Berdych & 0 & 13 & 32 & 2002\~2019 & 4(2015.05) \\ 
+7 & Mikhail Youzhny & 0 & 10 & 27 & 1999\~2019 & 8(2008.01) \\ 
+8 & Andy Roddick & 1 & 32 & 33 & 2000\~2012 & 1(2003.11) \\ 
+9 & Tommy Robredo & 0 & 12 & 32 & 1998\~ & 5(2006.08) \\ 
+10 & Fernando Verdasco & 0 & 7 & 22 & 2001\~ & 7(2009.04) \\ \hline
+
+\end{tabular}
+\end{table}
+
+For Page Rank, Table~\ref{tab_katz_vs_page} is shown with the comparison with Katz centrality.
+
 
 \begin{table}
 \centering
 \caption{Katz vs Page Rank}\label{tab_katz_vs_page}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-$\#$ & Katz & value & Page & value \\ \hline
+\# & Katz & value & Page & value \\ \hline
 1 & ROGER-FEDERER & 0.199 & ROGER-FEDERER & 0.00536 \\ \hline
 2 & RAFAEL-NADAL & 0.162 & DAVID-FERRER & 0.00442 \\ \hline
 3 & NOVAK-DJOKOVIC & 0.157 & RAFAEL-NADAL & 0.00417 \\ \hline
@@ -299,6 +424,41 @@ $\#$ & Katz & value & Page & value \\ \hline
 \end{tabular}
 \end{table}
 
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{3b_pagerank-Katz_centralityplot}
+\caption{Page Rank vs Katz} \label{fig_3a_page_katz_plot}
+\end{figure}
+
+\begin{table}
+\centering
+\caption{Page Rank vs Reality}\label{tab_page_vs_real}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+
+\# & Name & Won & Won & GOAT* & Active & Highest Ranking \\ 
+ &  & GS & Title & point & Year & (achieved date) \\ \hline
+1 & Roger Federer & 20 & 103 & 201 & 1998\~ & 1(2004.02) \\ 
+2 & David Ferrer & 0 & 27 & 124 & 2000\~2019 & 3(2013.07) \\ 
+3 & Rafael Nadal & 19 & 84 & 168 & 2001\~ & 1(2008.08) \\ 
+4 & Mikhail Youzhny & 0 & 10 & 27 & 1999\~2019 & 8(2008.01) \\ 
+5 & Tommy Robredo & 0 & 12 & 32 & 1998\~ & 5(2006.08) \\ 
+6 & Novak Djokovic & 16 & 77 & 185 & 2003\~ & 1(2011.07) \\ 
+7 & Tomas Berdych & 0 & 13 & 32 & 2002\~2019 & 4(2015.05) \\ 
+8 & Tommy Haas & 0 & 15 & 58 & 1996\~2017 & 2(2002.05) \\ 
+9 & Feliciano Lopez & 0 & 7 & 22 & 1997\~ & 12(2015.03) \\ 
+10 & Fernando Verdasco & 0 & 7 & 22 & 2001\~ & 7(2009.04) \\ \hline
+
+\end{tabular}
+\end{table}
+
+
+
+
+The result of centrality comparison has fulfilled my motivation of this project.
+
+% Section of Network Model
 \section{Network Model}
 
 Fig.~\ref{fig_4a_random_graph} gives an example of a figure.
@@ -309,9 +469,9 @@ Table~\ref{tab_smallworld} an example of a table.
 Table~\ref{tab_prefere_attach} an example of a table.
 
 
-
 \begin{table}
-\caption{Structural Metrics of random network.}\label{tab_random}
+\centering
+\caption{Structural Metrics of Random Network.}\label{tab_random}
 \begin{tabular}{|l|l|}
 \hline
 metric & value \\
@@ -333,10 +493,11 @@ number of component & 1 \\
 \end{table}
 
 
-Table~\ref{tab_smallworld} an example of a table.
+
 
 \begin{table}
-\caption{Structural Metrics of k-core network.}\label{tab_smallworld}
+\centering
+\caption{Structural Metrics of Small World}\label{tab_smallworld}
 \begin{tabular}{|l|l|}
 \hline
 metric & value \\
@@ -356,10 +517,11 @@ number of component & 1 \\
 \end{tabular}
 \end{table}
 
-Table~\ref{tab_prefere_attach} an example of a table.
+
 
 \begin{table}
-\caption{Structural Metrics of k-core network.}\label{tab_prefere_attach}
+\centering
+\caption{Structural Metrics of Preferential Attachment network.}\label{tab_prefere_attach}
 \begin{tabular}{|l|l|}
 \hline
 metric & value \\
@@ -375,7 +537,7 @@ average clustering coefficient & 0.051652 \\
 transitivity & 0.049413 \\
 number of triangle & 108398 \\ 
 number of clique & 80531 \\
-number of component & 1 \\
+number of component & 1 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -386,10 +548,11 @@ number of component & 1 \\
 \caption{Free-Scale Compare} \label{tab_free_scale_compare}
 \begin{tabular}{|l|l|l|}
 \hline
-& preferential network & player network \\ \hline
-alpha & 3.71 & 2.11 \\ 
-kmax & 480 & 1290 \\ 
-kmin & 25 & 1 \\ 
+parameter & preferential  & player  \\
+&  network &  network \\ \hline
+\alpha & 3.71 & 2.11 \\ 
+k_{max} & 480 & 1290 \\ 
+k_{min} & 25 & 1 \\ 
 N & 3035 & 3035 \\ \hline
 
 \end{tabular}
@@ -397,7 +560,7 @@ N & 3035 & 3035 \\ \hline
 
 
 \begin{figure}
-\includegraphics[width=\textwidth]{4a_random_graph}
+\includegraphics[width=\textwidth]{4a_random_graph}
 \caption{Random Network k=3035,p=0.0016} \label{fig_4a_random_graph}
 \end{figure}
 
@@ -429,18 +592,27 @@ N & 3035 & 3035 \\ \hline
 \end{figure}
 
 
-\section{Conclusions and Future Work}
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{4_degree_dist_compare_log}
+\caption{Degree Dist. Comparison} \label{fig_4b_degree_dist_compare_log}
+\end{figure}
+
+
+\section{Conclusions and Outlook}
+
 
 Simple graphical analysis on network is useful for tennis player evaluation.
 Both Eigen and Katz centrality gives a good result for player evaluation.
-Player network exhibits scale-free model with $\alpha $ approximating 2.1.
+Player network exhibits scale-free model with \alpha approximating 2.1.
 To answer question such as which of them is better in serving, returning or win-rate requires further investigation. New rankings can be explored through different match statistics. Constructing & Comparing network for every decade.
+
 %
 % ---- Bibliography ----
 %
 \bibliographystyle{splncs04}
-\bibliography{mybib}
 
-All links were last followed on November 21, 2019.
+\bibliography{mybib}
+All links were last followed on January 30, 2020.
 
 \end{document}
