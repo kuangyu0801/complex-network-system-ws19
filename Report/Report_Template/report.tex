@@ -27,10 +27,10 @@
 %
 \begin{abstract}
 In this project, an ATP(Association of Tennis Professionals) player network 
-based on tennis match statistics of ATPWorld Tour was built and analyzed.
+based on tennis match statistics of ATP World Tour was built and analyzed.
 The goal for this project is to discuss the correlation of several centrality rankings with 
-real-world qualities of players. In the end, I landed on a conclusion that Kat centrality is the most
-suitable centrality. Top 10 ranking of Kat centrality is almost aligned with the real-world evaluation of 
+real-world qualities of players. In the end, I landed on a conclusion that Katz centrality is the most
+suitable centrality. Top 10 ranking of Katz centrality is almost aligned with the real-world evaluation of 
 player. Moreover, with the comparison for different network models, the player network exhibits the 
 property of scale-free network. 
 
@@ -40,12 +40,18 @@ property of scale-free network.
 %
 %
 \section{Introduction}
-I picked this topic not only because I am big tennis fan but also because I interested in evaluating evaluating players from the match result for the past 20 years. 
+I picked this topic not only because I am big tennis fan but also because I am interested in evaluating evaluating players from the match result for the past 20 years. 
 ATP stands for Association of Tennis Professionals, which is male professional tennis. ATP currently has over 1800 active players. ATP holds over 60 tennis tournaments with over 2000 matches worldwide. These tournaments are categorized into several categories according to its "points". 
 Fig.~\ref{fig_example} gives an example of the point that winner can score in each tournament. Almost all tournaments are held in a single-elimination fashion. This means a player is dropped out from the tournament once he loses a match. The draw of the tournament is based on ATP ranking to separate top-ranked players from encountering each other in the early stage of tournament. With single elimination and rank-based draw, a "lucky" champion can not happen.
-As mentioned above, ATP has its ranking, called ATP ranking. This ranking is also know as "world ranking". The ranking is a 52-week rolling ranking and is updated on a weekly basis. The rules of ATP ranking is only for active player. There are other ranking which focus on different aspect of player performance, such as Grand Slams ranking and GOAT points ranking. All of these rankings has its limitation.ATP ranking system only includes  active players. It is not logical to compare the retired players with active ones simply based on their rankings since they may not in the same period. For example, both Roger Federer and Andre Agassi were ranked no.1 in ATP during their prime years. I hope that by constructing a network from match statistic I could gain further insights in player evaluation. 
+As mentioned above, ATP has its ranking, called ATP ranking \cite{ref_url_atp} shown in Fig.~\ref{fig_0_atp_ranking}. This ranking is also know as "world ranking". The ranking is a 52-week rolling ranking and is updated on a weekly basis. The rules of ATP ranking is only for active player. There are other ranking which focus on different aspect of player performance, such as Grand Slams ranking and GOAT points ranking \cite{ref_url_goat}. All of these rankings has its limitation.ATP ranking system only includes  active players. It is not logical to compare the retired players with active ones simply based on their rankings since they may not in the same period. For example, both Roger Federer and Andre Agassi were ranked no.1 in ATP during their prime years. I hope that by constructing a network from match statistic I could gain further insights in player evaluation. 
 
-\todo[1] {add more comments}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{ATP_ranking}
+\caption{ATP ranking} \label{fig_0_atp_ranking}
+\end{figure}
+
+
 Real data is collected from ATP match statistic from 1996~2016. A network is constructed based on this graph. 
 Each node represent a tennis player. An edge represents a match fought between two players. Each each has an attribute of "weight", indicating the total number of matches.
 To simplify the analysis of network, I chose my network to be a undirected graph with weighted edge.
@@ -92,6 +98,7 @@ Using NetworkX, I am able to compute the structural metric for my network.
 \hline
 metric & value \\
 \hline
+average degree & 49.154 \\
 order & 3,035 \\
 size & 45,563 \\
 density & 0.009896 \\
@@ -108,7 +115,7 @@ number of component & 1\\
 \end{table}
 
 
-Table~\ref{tab_my} listed the structural metrics from my player network. Several things are worth mentioning here. First, number of  triangles is divided by 3 because the NetworkX function counted a triangle 3 times, each node for a time. The average clustering coefficient is the average of all local clustering coefficient. In here, the calculation of local clustering coefficient takes the weighted edge into account. The detail of formula can be found in \cite{ref_url_cluster_coeff} Therefore, the average clustering coefficient is not transitivity, which is derived from formula in textbook
+Table~\ref{tab_my} listed the structural metrics from my player network. Several things are worth mentioning here. First, number of  triangles is divided by 3 because the NetworkX function counted a triangle 3 times, each node for a time. The average clustering coefficient is the average of all local clustering coefficient. In here, the calculation of local clustering coefficient takes the weighted edge into account. The detail of formula can be found in ~\cite{ref_url_cluster_coeff} Therefore, the average clustering coefficient is not transitivity, which is derived from formula in textbook ~\cite{ref_book1}.
 
 Both diameter, average shortest path length are low as expected. Further, the clustering coefficient is 0.35. This number is very high, compared with 0.20 in network of film actor collaborations, 0.09 in network of collaborations between biologists and 0.16 in a network of people who sends email to whom in a large university. There is only one component.
 
@@ -260,7 +267,7 @@ In this section, 6 different kinds of centralities are discussed. Katz centralit
 \begin{table}
 \caption{Harmonic vs Betweenness vs Degree}\label{tab_total_compare}
 \begin{tabular}{|l|l|l|l|l|l|l|} \hline
-\# & Harmonic & H_{i} & Betweenness & B_{i} & Eigen & k_{i} \\ \hline
+\(\#\) & Harmonic & \(H_{i}\)  & Betweenness & \(B_{i}\) & Eigen & \(k_{i}\) \\ \hline
 1 & JAN-HERNYCH & 0.458 & RAJEEV-RAM & 0.016 & TOMMY-HAAS & 0.106 \\ \hline
 2 & RAJEEV-RAM & 0.453 & MISCHA-ZVEREV & 0.016 & ROGER-FEDERER & 0.1 \\ \hline
 3 & MICHAEL-BERRER & 0.449 & MICHAL-PRZYSIEZNY & 0.016 & MIKHAIL-YOUZHNY & 0.098 \\ \hline
@@ -319,16 +326,16 @@ Table~\ref{tab_total_compare} shows top 10 of the comparison for three centralit
 
 \# & Name & Won & Won & GOAT* & Active & Highest Ranking \\ 
  &  & GS & Title & point & Year & (achieved date) \\ \hline
-1 & Roger Federer & 20 & 103 & 201 & 1998\~ & 1(2004.02) \\ 
-2 & Rafael Nadal & 19 & 84 & 168 & 2001\~ & 1(2008.08) \\ 
-3 & Novak Djokovic & 16 & 77 & 185 & 2003\~ & 1(2011.07) \\ 
-4 & David Ferrer & 0 & 27 & 124 & 2000\~2019 & 3(2013.07) \\ 
-5 & Andy Murray & 3 & 46 & 57 & 2005\~ & 1(2016.11) \\ 
-6 & Tomas Berdych & 0 & 13 & 32 & 2002\~2019 & 4(2015.05) \\ 
-7 & Mikhail Youzhny & 0 & 10 & 27 & 1999\~2019 & 8(2008.01) \\ 
-8 & Andy Roddick & 1 & 32 & 33 & 2000\~2012 & 1(2003.11) \\ 
-9 & Tommy Robredo & 0 & 12 & 32 & 1998\~ & 5(2006.08) \\ 
-10 & Fernando Verdasco & 0 & 7 & 22 & 2001\~ & 7(2009.04) \\ \hline
+1 & Roger Federer & 20 & 103 & 201 & 1998- & 1(2004.02) \\ 
+2 & Rafael Nadal & 19 & 84 & 168 & 2001- & 1(2008.08) \\ 
+3 & Novak Djokovic & 16 & 77 & 185 & 2003- & 1(2011.07) \\ 
+4 & David Ferrer & 0 & 27 & 124 & 2000-2019 & 3(2013.07) \\ 
+5 & Andy Murray & 3 & 46 & 57 & 2005- & 1(2016.11) \\ 
+6 & Tomas Berdych & 0 & 13 & 32 & 2002-2019 & 4(2015.05) \\ 
+7 & Mikhail Youzhny & 0 & 10 & 27 & 1999-2019 & 8(2008.01) \\ 
+8 & Andy Roddick & 1 & 32 & 33 & 2000-2012 & 1(2003.11) \\ 
+9 & Tommy Robredo & 0 & 12 & 32 & 1998- & 5(2006.08) \\ 
+10 & Fernando Verdasco & 0 & 7 & 22 & 2001- & 7(2009.04) \\ \hline
 
 \end{tabular}
 \end{table}
@@ -355,13 +362,13 @@ Fig.~\ref{fig_3a_degreebet_centralityplot} and Fig.~\ref{fig_3a_degree_harmonic_
     \begin{minipage}{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{3a_degree_centrality-betweenness_centralityplot} % first figure itself
-        \caption{B_{i} vs. k_{i}}
+        \caption{\(B_{i}\) vs. \(k_{i}\)}
         \label{fig_3a_degreebet_centralityplot}
     \end{minipage}\hfill
     \begin{minipage}{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{3a_degree_centrality-harmonic_centralityplot} % second figure itself
-        \caption{H*_{i}  vs.  k_{i}}
+        \caption{\(H*_{i}\)  vs.  \(k_{i}\)}
         \label{fig_3a_degree_harmonic_centralityplot}
     \end{minipage}
 \end{figure}
@@ -387,22 +394,25 @@ For Katz centrality, I have choose \(\alpha = 0.9*\frac{1}{\lambda} \) to guaran
 
 \# & Name & Won & Won & GOAT* & Active & Highest Ranking \\ 
  &  & GS & Title & point & Year & (achieved date) \\ \hline
-1 & Roger Federer & 20 & 103 & 201 & 1998\~ & 1(2004.02) \\ 
-2 & Rafael Nadal & 19 & 84 & 168 & 2001\~ & 1(2008.08) \\ 
-3 & Novak Djokovic & 16 & 77 & 185 & 2003\~ & 1(2011.07) \\ 
-4 & David Ferrer & 0 & 27 & 124 & 2000\~2019 & 3(2013.07) \\ 
-5 & Andy Murray & 3 & 46 & 57 & 2005\~ & 1(2016.11) \\ 
-6 & Tomas Berdych & 0 & 13 & 32 & 2002\~2019 & 4(2015.05) \\ 
-7 & Mikhail Youzhny & 0 & 10 & 27 & 1999\~2019 & 8(2008.01) \\ 
-8 & Andy Roddick & 1 & 32 & 33 & 2000\~2012 & 1(2003.11) \\ 
-9 & Tommy Robredo & 0 & 12 & 32 & 1998\~ & 5(2006.08) \\ 
-10 & Fernando Verdasco & 0 & 7 & 22 & 2001\~ & 7(2009.04) \\ \hline
+1 & Roger Federer & 20 & 103 & 201 & 1998- & 1(2004.02) \\ 
+2 & Rafael Nadal & 19 & 84 & 168 & 2001- & 1(2008.08) \\ 
+3 & Novak Djokovic & 16 & 77 & 185 & 2003- & 1(2011.07) \\ 
+4 & David Ferrer & 0 & 27 & 124 & 2000-2019 & 3(2013.07) \\ 
+5 & Andy Murray & 3 & 46 & 57 & 2005- & 1(2016.11) \\ 
+6 & Tomas Berdych & 0 & 13 & 32 & 2002-2019 & 4(2015.05) \\ 
+7 & Mikhail Youzhny & 0 & 10 & 27 & 1999-2019 & 8(2008.01) \\ 
+8 & Andy Roddick & 1 & 32 & 33 & 2000-2012 & 1(2003.11) \\ 
+9 & Tommy Robredo & 0 & 12 & 32 & 1998- & 5(2006.08) \\ 
+10 & Fernando Verdasco & 0 & 7 & 22 & 2001- & 7(2009.04) \\ \hline
 
 \end{tabular}
 \end{table}
 
-For Page Rank, Table~\ref{tab_katz_vs_page} is shown with the comparison with Katz centrality.
-
+For Katz centrality, I have choose \(\alpha = 0.85\) for striking a balance with random jump probability. Table~\ref{tab_katz_vs_page} is shown with the comparison with Katz centrality. Among the top 10 players, 2 players are the of the same rank, 6 players are presence in both rank, 2 players are different. Looking into the top 11~20 of page rank, players who are presence in top 10 in Katz appear.
+For example, Andy Roddick is 17th ranked and Andy Murray 14th in page rank. The values of their centrality is very close to each other, only by 0.001
+The reality compassion of page rank is shown in Table~\ref{tab_page_real}. It is obvious that page rank disagree greatly in the order of rank of reality. For example, in page rank, David Ferrer is ranked 2nd, 2 place higher in Katz while Novak Djokovic is ranked 6th, 3 place lower. 
+Still, page rank is strongly correlated with Katz centrality to a degree that is almost linear. Fig.\ref{fig_3a_page_katz_plot} shown the scatter plot between the two. The variation appears around page rank larger 0.002. In the higher ranked region, the disagreement is visually identifiable. The reason that Page Rank is not suitable for evaluating a player is due to part of the nature of page rank. Page Rank is originally designed for web pages with the assumption that a web page is more relevant than
+another if it is pointed by another important page. This is almost the case with Katz. However, the introduction of the "random jump" makes non-sense in the player network. That explains the variation in ranking of page rank compared with Katz centrality.
 
 \begin{table}
 \centering
@@ -433,41 +443,35 @@ For Page Rank, Table~\ref{tab_katz_vs_page} is shown with the comparison with Ka
 
 \begin{table}
 \centering
-\caption{Page Rank vs Reality}\label{tab_page_vs_real}
+\caption{Page Rank vs Reality}\label{tab_page_real}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
 
 \# & Name & Won & Won & GOAT* & Active & Highest Ranking \\ 
  &  & GS & Title & point & Year & (achieved date) \\ \hline
-1 & Roger Federer & 20 & 103 & 201 & 1998\~ & 1(2004.02) \\ 
-2 & David Ferrer & 0 & 27 & 124 & 2000\~2019 & 3(2013.07) \\ 
-3 & Rafael Nadal & 19 & 84 & 168 & 2001\~ & 1(2008.08) \\ 
-4 & Mikhail Youzhny & 0 & 10 & 27 & 1999\~2019 & 8(2008.01) \\ 
-5 & Tommy Robredo & 0 & 12 & 32 & 1998\~ & 5(2006.08) \\ 
-6 & Novak Djokovic & 16 & 77 & 185 & 2003\~ & 1(2011.07) \\ 
-7 & Tomas Berdych & 0 & 13 & 32 & 2002\~2019 & 4(2015.05) \\ 
-8 & Tommy Haas & 0 & 15 & 58 & 1996\~2017 & 2(2002.05) \\ 
-9 & Feliciano Lopez & 0 & 7 & 22 & 1997\~ & 12(2015.03) \\ 
-10 & Fernando Verdasco & 0 & 7 & 22 & 2001\~ & 7(2009.04) \\ \hline
+1 & Roger Federer & 20 & 103 & 201 & 1998- & 1(2004.02) \\ 
+2 & David Ferrer & 0 & 27 & 124 & 2000-2019 & 3(2013.07) \\ 
+3 & Rafael Nadal & 19 & 84 & 168 & 2001- & 1(2008.08) \\ 
+4 & Mikhail Youzhny & 0 & 10 & 27 & 1999-2019 & 8(2008.01) \\ 
+5 & Tommy Robredo & 0 & 12 & 32 & 1998- & 5(2006.08) \\ 
+6 & Novak Djokovic & 16 & 77 & 185 & 2003- & 1(2011.07) \\ 
+7 & Tomas Berdych & 0 & 13 & 32 & 2002-2019 & 4(2015.05) \\ 
+8 & Tommy Haas & 0 & 15 & 58 & 1996-2017 & 2(2002.05) \\ 
+9 & Feliciano Lopez & 0 & 7 & 22 & 1997- & 12(2015.03) \\ 
+10 & Fernando Verdasco & 0 & 7 & 22 & 2001- & 7(2009.04) \\ \hline
 
 \end{tabular}
 \end{table}
 
 
-
-
-The result of centrality comparison has fulfilled my motivation of this project.
+The result of centrality comparison has fulfilled my motivation of this project. Harmonic and Betweenness Centrality is totally uncorrelated to evaluation player. Although Page Rank ranking is very similar to Katz and Eigen centrality, the top ranked players is somewhat misaligned. Degree and Eigen Centrality is highly correlated to the evaluation player, almost aligned with GS, title and ATP ranking. For Eigen and Katz centrality, a node is important if it is the neighbor of other important node. This is the same case of player ranking, since the quality of a player is reflected by his opponent. Given that Katz centrality is an adoption of Eigen with adjustable weighting parameter \(\alpha \) and \(\beta\). Therefore, I would conclude that  Katz centrality is suitable for evaluation of player in a player network.
 
 % Section of Network Model
 \section{Network Model}
 
-Fig.~\ref{fig_4a_random_graph} gives an example of a figure.
-Table~\ref{tab_random} an example of a table.
-Fig.~\ref{fig_4_smallworld} gives an example of a figure.
-Fig.~\ref{fig_4b_perferrential} gives an example of a figure.
-Table~\ref{tab_smallworld} an example of a table.
-Table~\ref{tab_prefere_attach} an example of a table.
+In this section, I will be discussing network model. By comparing with random network, small world  and preferential attachment. All the network models are constructed using NetworkX's native function.
 
+For random network, I used Erdős-Rényi model to construct. I set the node size \(N = 3035\) and probability \( \frac{<k>}{N-1} =0.015 \). The \( <k> \) is the average degree of my network, which is 49.075. Table~\ref{tab_random} lists the structural metric for my random graph.
 
 \begin{table}
 \centering
@@ -492,7 +496,62 @@ number of component & 1 \\
 \end{tabular}
 \end{table}
 
+Both the average path length and clustering coefficient are lower than that of original network. There is only one component. No disconnected node appears. I calculated the critical value for deciding which region the random graph lands. With \(<k> = 49.152 > ln(N) = ln(3035) = 8\), the random graph is Supercritical with one giant component. Moreover, the clustering coefficient is shown in Fig.~\ref{fig_4a_clustering_coeff} and  Fig.~\ref{fig_4a_clustering_coeff_log}. With random graph, the clustering coefficient is almost identical for every node regardless of degree. The degree distribution is show in Fig.~\ref{fig_4a_degreedist_hist} and  Fig.~\ref{fig_4a_degreedist_log}. The result is close to a poisson distribution with \( \lambda = 49 \). Fig.~\ref{fig_4a_random_graph} shows the network of random graph. In the figure, there are no visible big hubs. Most of the nodes are of the same order of size, which verifies the degree distribution. 
 
+From the degree and clustering distribution, we can see that the player network is not a random graph. 
+
+\begin{figure}
+\includegraphics[width=\textwidth]{4a_random_graph}
+\caption{Random Network k=3035,p=0.0016} \label{fig_4a_random_graph}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4a_Degree_dist_hist} % first figure itself
+        \caption{Degree Distribution}
+        \label{fig_4a_degreedist_hist}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4a_Degree_dist_log} % second figure itself
+        \caption{Degree Distribution in log}
+        \label{fig_4a_degreedist_log}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4a_clustering_coeff} % first figure itself
+        \caption{Cluster. Coeff}
+        \label{fig_4a_clustering_coeff}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4a_clustering_coeff_log} % second figure itself
+        \caption{Cluster. Coeff in log}
+        \label{fig_4a_clustering_coeff_log}
+    \end{minipage}
+\end{figure}
+
+For small world, I used Watts-Strogatz model to construct. I first generated different small worlds with different probability of rewiring: 0.001, 0.01, 0.05, 0.1, 0.5, 1. Table.~\ref{tab_sm_comparison} shows the smallworldness for each of the generated graph. Therefore, I pick probability of rewiring with 0.05 because this graph has the largest smallworldness, 0.156. I set the node size \(N = 3035\) and number of neighbors for each node \( k =25 \), probability of rewiring \( p = 0.05 \) for my following analysis. The number of neighbors for each node is the half of average degree.
+
+\begin{table}
+\centering
+\caption{Small Worldness Comparison}\label{tab_sm_comparison}
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+probability & 0.001 & 0.01 & 0.05 & 0.1 & 0.5 & 1 & player network \\ \hline
+small worldness & 0.062 & 0.128 & 0.156 & 0.149 & 0.032 & 0.002 & 0.051 \\ \hline
+average path length & 11.348 & 5.43 & 3.953 & 3.53 & 2.894 & 2.829 & 3.263 \\ \hline
+clustering coefficient & 0.714 & 0.696 & 0.618 & 0.528 & 0.094 & 0.007 & 0.166 \\ \hline
+
+\end{tabular}
+\end{table}
 
 
 \begin{table}
@@ -517,7 +576,57 @@ number of component & 1 \\
 \end{tabular}
 \end{table}
 
+Table.~\ref{tab_smallworld} shows the structural metrics of small world. Both the average path length and clustering coefficient are higher than that of original network. This makes sense since small world is started with circular lattice. From the Fig.~\ref{fig_4_smallworld}, we can observe that there remains a structural of lattice. This explains the result of high clustering and average path length. If we choose the rewiring probability to be higher, then the residual circular lattice would become less obvious. The degree distributions are show in Fig.~\ref{fig_4b_sw_degreedist_hist} and  Fig.~\ref{fig_4b_sw_degreedist_log}. The distribution seems to be like a binomial distribution with center in 25. Moreover, the clustering coefficient is shown in Fig.~\ref{fig_4b_sw_clustering_coeff} and  Fig.~\ref{fig_4b_sw_clustering_coeff_log}. With small world, the clustering coefficient is almost identical for every node regardless of degree. From the degree and clustering distribution, we can see that the player network is not a small world. 
 
+\begin{figure}
+\includegraphics[width=\textwidth]{4b_small_world}
+\caption{Small World Network n=3035,k=25,p=0.05} \label{fig_4_smallworld}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4b_sw_dedist}
+        \caption{Degree Distribution}
+        \label{fig_4b_sw_degreedist_hist}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4b_sw_dedist_log}
+        \caption{Degree Distribution in log}
+        \label{fig_4b_sw_degreedist_log}
+    \end{minipage}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4b_preferential_attachment_clustering_coeff}
+        \caption{Cluster. Coeff}
+        \label{fig_4b_sw_clustering_coeff}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4b_preferential_attachment_clustering_coeff_log}
+        \caption{ Cluster. Coeff in log}
+        \label{fig_4b_sw_clustering_coeff_log}
+    \end{minipage}
+\end{figure}
+
+
+
+
+
+For preferential attachment, I used Barabási-Albert model to construct.  I set the node size \(N = 3035\) and expected degree \( m =25 \). In the hope of generating similar average degree as player network, the expected degree is chose to be the half of average degree. 
+
+Table.~\ref{tab_prefere_attach} shows the structural metrics of preferential attachment network. The average degree is almost the same as the player network. Both the average path length and clustering coefficient are much lower than that of original network. The clustering coefficient is around 0.05, lower by an order. This makes sense since new nodes have a preferential to attach to high degree nodes. The average path length is shortened due to big hubs. From the Fig.~\ref{fig_4b_perferrential}, we can observe several visible big hubs.
+
+	Moreover, the clustering coefficient are shown in Fig.~\ref{fig_4b_preferential_attachment_clustering_coeff} and  Fig.~\ref{fig_4b_preferential_attachment_clustering_coeff_log}. With preferential attachment, the clustering coefficient is equally small for every node regardless of degree. 
+ The degree distributions are shown in Fig.~\ref{fig_4b_pa_degreedist_hist} and  Fig.~\ref{fig_4b_pa_degreedist_log}. The distribution follows a power-law distribution and resembles that of player network.
 
 \begin{table}
 \centering
@@ -541,39 +650,28 @@ number of component & 1 \\ \hline
 \end{tabular}
 \end{table}
 
-\todo{make name two column}
-
-\begin{table}
-\centering
-\caption{Free-Scale Compare} \label{tab_free_scale_compare}
-\begin{tabular}{|l|l|l|}
-\hline
-parameter & preferential  & player  \\
-&  network &  network \\ \hline
-\alpha & 3.71 & 2.11 \\ 
-k_{max} & 480 & 1290 \\ 
-k_{min} & 25 & 1 \\ 
-N & 3035 & 3035 \\ \hline
-
-\end{tabular}
-\end{table}
-
-
-\begin{figure}
-\includegraphics[width=\textwidth]{4a_random_graph}
-\caption{Random Network k=3035,p=0.0016} \label{fig_4a_random_graph}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\textwidth]{4b_small_world}
-\caption{Small World Network n=3035,k=25,p=0.05} \label{fig_4_smallworld}
-\end{figure}
-
-
 \begin{figure}
 \includegraphics[width=\textwidth]{4b_perferrential}
 \caption{Perferential Attachment n=3035,m=25} \label{fig_4b_perferrential}
 \end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4b_preferential_attachment_Degree_dist_hist} % first figure itself
+        \caption{Degree Distribution}
+        \label{fig_4b_pa_degreedist_hist}
+    \end{minipage}\hfill
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4b_preferential_attachment_Degree_dist_log} % second figure itself
+        \caption{Degree Distribution in log}
+        \label{fig_4b_pa_degreedist_log}
+    \end{minipage}
+\end{figure}
+
 
 \begin{figure}
     \centering
@@ -591,8 +689,29 @@ N & 3035 & 3035 \\ \hline
     \end{minipage}
 \end{figure}
 
+Looking further in to the scale-freeness of both preferential attachment and player network, we are able to approximate scale-freeness \( \alpha \) with following formula:
+\begin{math}
+	k_{max} = k_{min}N^\frac{1}{\alpha -1}
+\end{math}.
 
-\begin{figure}
+The comparison of scale-free is shown in Table~\ref{tab_free_scale_compare}. The \(\alpha\) of preferential attachment is 3.71 and player network is 2.11. From the Fig.~\ref{fig_4b_degree_dist_compare_log}, both the degree distributions are shown in log scale. Indeed the slope of preferential attachment is almost twice of player network. In the lecture, it is told that a network enters scale free regime with \(\alpha\) between 2 and 3. Judging from the degree distribution, I can say that both of the networks are scale-free. Therefore, player network is close to preferential attachment network. 
+
+\begin{table}
+\centering
+\caption{Free-Scale Compare} \label{tab_free_scale_compare}
+\begin{tabular}{|l|l|l|}
+\hline
+parameter & preferential  & player  \\
+&  network &  network \\ \hline
+\(\alpha\) & 3.71 & 2.11 \\ 
+k_{max} & 480 & 1290 \\ 
+k_{min} & 25 & 1 \\ 
+N & 3035 & 3035 \\ \hline
+
+\end{tabular}
+\end{table}
+
+\begin{figure} [H]
 \centering
 \includegraphics[width=\textwidth]{4_degree_dist_compare_log}
 \caption{Degree Dist. Comparison} \label{fig_4b_degree_dist_compare_log}
@@ -601,17 +720,12 @@ N & 3035 & 3035 \\ \hline
 
 \section{Conclusions and Outlook}
 
-
-Simple graphical analysis on network is useful for tennis player evaluation.
-Both Eigen and Katz centrality gives a good result for player evaluation.
-Player network exhibits scale-free model with \alpha approximating 2.1.
-To answer question such as which of them is better in serving, returning or win-rate requires further investigation. New rankings can be explored through different match statistics. Constructing & Comparing network for every decade.
-
+In this project, I have constructed a tennis player network based on match statistics. I analyzed the player network in terms of structural metrics, centralities, and network model. After comparing 6 top 10 different centralities, I reached a conclusion that Katz centrality performs best rank for player evaluation. In network model comparison,  player network exhibits scale-free model with \(\alpha\) approximating 2.1. 
+We can see that simple graphical analysis on network already gives insights for tennis player evaluation. By adding more attributes in the network, we will be able to answer question such as which of them is better n serving, tiebreak, returning or winning-rate. New rankings for tennis can be explored through further investigation.
 %
 % ---- Bibliography ----
 %
 \bibliographystyle{splncs04}
-
 \bibliography{mybib}
 All links were last followed on January 30, 2020.
 
