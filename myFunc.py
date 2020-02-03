@@ -23,8 +23,8 @@ def my_avg_degree(G):
 def my_max_degree(G):
     max_degree = 0
     for node in list(G.nodes):
-        if G.degree(node) > max_degree:
-            max_degree = G.degree(node)
+        if G.degree(node, weight='weight') > max_degree:
+            max_degree = G.degree(node, weight='weight')
     print('max_degree %d' % max_degree)
     return max_degree
 
@@ -45,8 +45,8 @@ def my_min_degree(G):
     min_degree = 0
     min_node = {}
     for node in list(G.nodes):
-        if G.degree(node) < min_degree or flag_first == False:
-            min_degree = G.degree(node)
+        if G.degree(node, weight='weight') < min_degree or flag_first == False:
+            min_degree = G.degree(node, weight='weight')
             min_node = node
             flag_first = True
     print('min_degree %d' % min_degree)
@@ -138,7 +138,11 @@ def my_plothist(list_in, tag_title, tag_x, tag_y, fout_png):
 
     plt.cla()  # clear previous plot
     # the histogram of the data
-    n, bins, patches = plt.hist(list_in, round(max(list_in)-min(list_in)), density=True, facecolor='g')
+    if round(max(list_in)-min(list_in)) > 100:
+        n_bin = 100
+    else:
+        n_bin = round(max(list_in)-min(list_in))
+    n, bins, patches = plt.hist(list_in, n_bin, density=True, facecolor='g')
 
     plt.xlabel(tag_x)
     plt.ylabel(tag_y)
@@ -179,6 +183,25 @@ def my_poisson(lambda_in):
 
 
 # save scatter plot with control flag en_log
+def my_scattermultiplot(list_x, list_y,list_a, list_b,tag_title, tag_x, tag_y, legend_1, legend_2, fout_png, en_loglog):
+
+    plt.cla()  # clear previous plot
+    if en_loglog:
+        plt.loglog(list_x, list_y, 'ro')
+        plt.loglog(list_a, list_b, 'bo')
+    else:
+        plt.plot(list_x, list_y, 'ro')
+        plt.plot(list_a, list_b, 'bo')
+
+    plt.xlabel(tag_x)
+    plt.ylabel(tag_y)
+    plt.title(tag_title)
+    plt.legend([legend_1, legend_2], loc=1)
+    plt.grid(True)
+    plt.savefig(fout_png)
+    print('[Output]' + fout_png)
+    return True
+
 def my_scatterplot(list_x, list_y, tag_title, tag_x, tag_y, fout_png, en_loglog):
 
     plt.cla()  # clear previous plot

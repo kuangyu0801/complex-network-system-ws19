@@ -44,12 +44,13 @@ if False:
 
     my_property(fin_gexf, ftxt_out)
 
-# distance_distribution for original network
+# distance and degree distribution for original network
 if False:
     fout_png_name = 'output/pic/' + tag_PR[2] + '_' + tag_ALGO[2][3]
     fout_csv = 'output/csv/' + tag_PR[2] + '_' + tag_ALGO[2][3] + '.csv'
 
     my_distance_dist(fin_gexf, fout_csv,  fout_png_name)
+    my_degreedist(fin_gexf, tag_PR[2])
 
 # ego_network
 if False:
@@ -150,9 +151,10 @@ if False:
     for p in p_prob:
         list_gexf.append(my_smallworld(node_size, k_link, p))
 
-    fout_txt = 'output/' + tag_PR[8] + '_' + tag_ALGO[8][1] + '_my.txt'  # my network
+# calculating small-worldness with my own graph
+if False:
 
-    # calculating small-worldness with my own graph
+    fout_txt = 'output/' + tag_PR[8] + '_' + tag_ALGO[8][1] + '_my.txt'  # my network
     my_calsmallworldness(G, fout_txt)
 
 if False:
@@ -160,3 +162,8 @@ if False:
 
     fout_pre_attach_gexf = my_preferattach(fin_gexf)
     my_property(fout_pre_attach_gexf, fout_txt)  # property_analysis
+
+# compare original network with pre_attach network in degree
+if True:
+    fout_pre_attach_gexf = 'output/gexf/4b_preferential_attachment_n_3035_m_25.gexf'
+    my_degree_compare(fin_gexf, fout_pre_attach_gexf)
