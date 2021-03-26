@@ -1,4 +1,4 @@
-gexf file: output/gexf/2_k_core__k_78_nx.gexf 
+gexf file: output/gexf/2_k_core__k_78_my.gexf 
 order: 162 
 size: 8954 
 density: 0.686604 

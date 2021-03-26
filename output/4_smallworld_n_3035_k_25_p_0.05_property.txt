@@ -1,0 +1,12 @@
+gexf file: output/gexf/4_smallworld_n_3035_k_25_p_0.05.gexf 
+order: 3035 
+size: 36420 
+density: 0.007910 
+diameter:6 
+radius: 5 
+average path length: 3.953023 
+average clustering coefficient: 0.618777 
+transitivity: 0.616572 
+number of triangle: 172503 
+number of clique: 13260 
+number of component: 1 
