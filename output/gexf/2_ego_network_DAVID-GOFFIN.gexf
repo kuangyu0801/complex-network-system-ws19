@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2020-01-22">
+    <creator>NetworkX 2.4</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <nodes>
+      <node id="YUICHI-SUGITA" label="YUICHI-SUGITA" />
+      <node id="ROBIN-HAASE" label="ROBIN-HAASE" />
+      <node id="KAREN-KHACHANOV" label="KAREN-KHACHANOV" />
+      <node id="GAEL-MONFILS" label="GAEL-MONFILS" />
+      <node id="PETER-GOJOWCZYK" label="PETER-GOJOWCZYK" />
+      <node id="DAVID-GOFFIN" label="DAVID-GOFFIN" />
+      <node id="RAFAEL-NADAL" label="RAFAEL-NADAL" />
+      <node id="NICOLAS-ALMAGRO" label="NICOLAS-ALMAGRO" />
+      <node id="ROBERTO-BAUTISTA-AGUT" label="ROBERTO-BAUTISTA-AGUT" />
+      <node id="FLORIAN-MAYER" label="FLORIAN-MAYER" />
+      <node id="RICHARD-GASQUET" label="RICHARD-GASQUET" />
+      <node id="FERNANDO-VERDASCO" label="FERNANDO-VERDASCO" />
+      <node id="STEVE-DARCIS" label="STEVE-DARCIS" />
+      <node id="ATTILA-BALAZS" label="ATTILA-BALAZS" />
+      <node id="NOVAK-DJOKOVIC" label="NOVAK-DJOKOVIC" />
+      <node id="SAM-QUERREY" label="SAM-QUERREY" />
+      <node id="GUIDO-PELLA" label="GUIDO-PELLA" />
+      <node id="JO-WILFRIED-TSONGA" label="JO-WILFRIED-TSONGA" />
+      <node id="HORACIO-ZEBALLOS" label="HORACIO-ZEBALLOS" />
+      <node id="FRANCES-TIAFOE" label="FRANCES-TIAFOE" />
+      <node id="GRIGOR-DIMITROV" label="GRIGOR-DIMITROV" />
+      <node id="IVAN-DODIG" label="IVAN-DODIG" />
+      <node id="DARIAN-KING" label="DARIAN-KING" />
+      <node id="PAUL-HENRI-MATHIEU" label="PAUL-HENRI-MATHIEU" />
+      <node id="MILOS-RAONIC" label="MILOS-RAONIC" />
+      <node id="HYEON-CHUNG" label="HYEON-CHUNG" />
+      <node id="JULIEN-BENNETEAU" label="JULIEN-BENNETEAU" />
+      <node id="ADRIAN-MANNARINO" label="ADRIAN-MANNARINO" />
+      <node id="NIKOLOZ-BASILASHVILI" label="NIKOLOZ-BASILASHVILI" />
+      <node id="ALEXANDR-DOLGOPOLOV" label="ALEXANDR-DOLGOPOLOV" />
+      <node id="BENOIT-PAIRE" label="BENOIT-PAIRE" />
+      <node id="REILLY-OPELKA" label="REILLY-OPELKA" />
+      <node id="THOMAZ-BELLUCCI" label="THOMAZ-BELLUCCI" />
+      <node id="ALBERT-RAMOS-VINOLAS" label="ALBERT-RAMOS-VINOLAS" />
+      <node id="STEFANOS-TSITSIPAS" label="STEFANOS-TSITSIPAS" />
+      <node id="DONALD-YOUNG" label="DONALD-YOUNG" />
+      <node id="PIERRE-HUGUES-HERBERT" label="PIERRE-HUGUES-HERBERT" />
+      <node id="RADU-ALBOT" label="RADU-ALBOT" />
+      <node id="ANDREY-KUZNETSOV" label="ANDREY-KUZNETSOV" />
+      <node id="PABLO-CUEVAS" label="PABLO-CUEVAS" />
+      <node id="RADEK-STEPANEK" label="RADEK-STEPANEK" />
+      <node id="ROGER-FEDERER" label="ROGER-FEDERER" />
+      <node id="SERGIY-STAKHOVSKY" label="SERGIY-STAKHOVSKY" />
+      <node id="NICK-KYRGIOS" label="NICK-KYRGIOS" />
+      <node id="MARIN-CILIC" label="MARIN-CILIC" />
+      <node id="EVGENY-DONSKOY" label="EVGENY-DONSKOY" />
+      <node id="DOMINIC-THIEM" label="DOMINIC-THIEM" />
+      <node id="HENRI-LAAKSONEN" label="HENRI-LAAKSONEN" />
+      <node id="MATTHEW-EBDEN" label="MATTHEW-EBDEN" />
+      <node id="STEPHANE-ROBERT" label="STEPHANE-ROBERT" />
+      <node id="ANDREY-RUBLEV" label="ANDREY-RUBLEV" />
+      <node id="FELICIANO-LOPEZ" label="FELICIANO-LOPEZ" />
+      <node id="JACK-SOCK" label="JACK-SOCK" />
+      <node id="GILLES-SIMON" label="GILLES-SIMON" />
+      <node id="IVO-KARLOVIC" label="IVO-KARLOVIC" />
+      <node id="DIEGO-SCHWARTZMAN" label="DIEGO-SCHWARTZMAN" />
+    </nodes>
+    <edges>
+      <edge source="YUICHI-SUGITA" target="GRIGOR-DIMITROV" id="72" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="MILOS-RAONIC" id="113" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="DOMINIC-THIEM" id="298" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="SAM-QUERREY" id="875" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="BENOIT-PAIRE" id="1262" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="DAVID-GOFFIN" id="2128" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="KAREN-KHACHANOV" id="2171" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="JACK-SOCK" id="2682" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="ADRIAN-MANNARINO" id="2723" weight="4.0" />
+      <edge source="YUICHI-SUGITA" target="ROGER-FEDERER" id="2761" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="RICHARD-GASQUET" id="2834" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="ANDREY-RUBLEV" id="2840" weight="1.0" />
+      <edge source="YUICHI-SUGITA" target="MATTHEW-EBDEN" id="3036" weight="1.0" />
+      <edge source="ROBIN-HAASE" target="GRIGOR-DIMITROV" id="69" weight="1.0" />
+      <edge source="ROBIN-HAASE" target="RAFAEL-NADAL" id="180" weight="1.0" />
+      <edge source="ROBIN-HAASE" target="DOMINIC-THIEM" id="296" weight="2.0" />
+      <edge source="ROBIN-HAASE" target="DIEGO-SCHWARTZMAN" id="340" weight="2.0" />
+      <edge source="ROBIN-HAASE" target="FRANCES-TIAFOE" id="983" weight="1.0" />
+      <edge source="ROBIN-HAASE" target="ALBERT-RAMOS-VINOLAS" id="1347" weight="1.0" />
+      <edge source="ROBIN-HAASE" target="FERNANDO-VERDASCO" id="1979" weight="2.0" />
+      <edge source="ROBIN-HAASE" target="DAVID-GOFFIN" id="2115" weight="3.0" />
+      <edge source="ROBIN-HAASE" target="FLORIAN-MAYER" id="2278" weight="1.0" />
+      <edge source="ROBIN-HAASE" target="RICHARD-GASQUET" id="2279" weight="3.0" />
+      <edge source="ROBIN-HAASE" target="ROGER-FEDERER" id="2288" weight="1.0" />
+      <edge source="ROBIN-HAASE" target="ADRIAN-MANNARINO" id="2289" weight="1.0" />
+      <edge source="ROBIN-HAASE" target="JACK-SOCK" id="2291" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="RAFAEL-NADAL" id="183" weight="2.0" />
+      <edge source="KAREN-KHACHANOV" target="DIEGO-SCHWARTZMAN" id="335" weight="2.0" />
+      <edge source="KAREN-KHACHANOV" target="ALEXANDR-DOLGOPOLOV" id="618" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="GILLES-SIMON" id="644" weight="2.0" />
+      <edge source="KAREN-KHACHANOV" target="ROBERTO-BAUTISTA-AGUT" id="1193" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="BENOIT-PAIRE" id="1234" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="JO-WILFRIED-TSONGA" id="2031" weight="2.0" />
+      <edge source="KAREN-KHACHANOV" target="IVO-KARLOVIC" id="2044" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="HORACIO-ZEBALLOS" id="2082" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="DAVID-GOFFIN" id="2119" weight="3.0" />
+      <edge source="KAREN-KHACHANOV" target="JACK-SOCK" id="2156" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="ADRIAN-MANNARINO" id="2157" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="PABLO-CUEVAS" id="2160" weight="2.0" />
+      <edge source="KAREN-KHACHANOV" target="THOMAZ-BELLUCCI" id="2161" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="NIKOLOZ-BASILASHVILI" id="2162" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="ROGER-FEDERER" id="2165" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="ANDREY-RUBLEV" id="2166" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="ANDREY-KUZNETSOV" id="2167" weight="1.0" />
+      <edge source="KAREN-KHACHANOV" target="STEFANOS-TSITSIPAS" id="2175" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="RAFAEL-NADAL" id="150" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="DOMINIC-THIEM" id="292" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="ALEXANDR-DOLGOPOLOV" id="598" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="GILLES-SIMON" id="650" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="ROBERTO-BAUTISTA-AGUT" id="1215" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="HYEON-CHUNG" id="1570" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="NOVAK-DJOKOVIC" id="1944" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="FERNANDO-VERDASCO" id="1980" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="DAVID-GOFFIN" id="2130" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="ADRIAN-MANNARINO" id="2729" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="RICHARD-GASQUET" id="2778" weight="4.0" />
+      <edge source="GAEL-MONFILS" target="SERGIY-STAKHOVSKY" id="2779" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="DARIAN-KING" id="2780" weight="1.0" />
+      <edge source="GAEL-MONFILS" target="DONALD-YOUNG" id="2782" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="DOMINIC-THIEM" id="322" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="GILLES-SIMON" id="662" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="ROBERTO-BAUTISTA-AGUT" id="1210" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="BENOIT-PAIRE" id="1250" weight="2.0" />
+      <edge source="PETER-GOJOWCZYK" target="IVO-KARLOVIC" id="2054" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="DAVID-GOFFIN" id="2143" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="PAUL-HENRI-MATHIEU" id="2414" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="NIKOLOZ-BASILASHVILI" id="2456" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="EVGENY-DONSKOY" id="2550" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="REILLY-OPELKA" id="2908" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="GUIDO-PELLA" id="2925" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="STEFANOS-TSITSIPAS" id="3054" weight="1.0" />
+      <edge source="PETER-GOJOWCZYK" target="MATTHEW-EBDEN" id="3068" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="GRIGOR-DIMITROV" id="41" weight="5.0" />
+      <edge source="DAVID-GOFFIN" target="MILOS-RAONIC" id="95" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="RAFAEL-NADAL" id="166" weight="3.0" />
+      <edge source="DAVID-GOFFIN" target="DOMINIC-THIEM" id="278" weight="3.0" />
+      <edge source="DAVID-GOFFIN" target="DIEGO-SCHWARTZMAN" id="333" weight="2.0" />
+      <edge source="DAVID-GOFFIN" target="ALEXANDR-DOLGOPOLOV" id="628" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="GILLES-SIMON" id="666" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="PIERRE-HUGUES-HERBERT" id="803" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="STEPHANE-ROBERT" id="835" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="SAM-QUERREY" id="849" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="FRANCES-TIAFOE" id="994" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="IVAN-DODIG" id="1007" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="ROBERTO-BAUTISTA-AGUT" id="1190" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="BENOIT-PAIRE" id="1260" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="ALBERT-RAMOS-VINOLAS" id="1328" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="MARIN-CILIC" id="1414" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="STEVE-DARCIS" id="1462" weight="2.0" />
+      <edge source="DAVID-GOFFIN" target="HYEON-CHUNG" id="1578" weight="2.0" />
+      <edge source="DAVID-GOFFIN" target="RADU-ALBOT" id="1624" weight="2.0" />
+      <edge source="DAVID-GOFFIN" target="NOVAK-DJOKOVIC" id="1937" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="FERNANDO-VERDASCO" id="1976" weight="2.0" />
+      <edge source="DAVID-GOFFIN" target="NICOLAS-ALMAGRO" id="2002" weight="2.0" />
+      <edge source="DAVID-GOFFIN" target="RADEK-STEPANEK" id="2015" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="JO-WILFRIED-TSONGA" id="2024" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="IVO-KARLOVIC" id="2046" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="HORACIO-ZEBALLOS" id="2087" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="REILLY-OPELKA" id="2116" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="ANDREY-KUZNETSOV" id="2117" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="PABLO-CUEVAS" id="2118" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="NICK-KYRGIOS" id="2120" weight="2.0" />
+      <edge source="DAVID-GOFFIN" target="DARIAN-KING" id="2121" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="NIKOLOZ-BASILASHVILI" id="2122" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="FLORIAN-MAYER" id="2123" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="THOMAZ-BELLUCCI" id="2124" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="SERGIY-STAKHOVSKY" id="2125" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="PAUL-HENRI-MATHIEU" id="2126" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="ATTILA-BALAZS" id="2127" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="ANDREY-RUBLEV" id="2129" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="GUIDO-PELLA" id="2131" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="JULIEN-BENNETEAU" id="2132" weight="2.0" />
+      <edge source="DAVID-GOFFIN" target="HENRI-LAAKSONEN" id="2133" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="DONALD-YOUNG" id="2134" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="EVGENY-DONSKOY" id="2135" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="ADRIAN-MANNARINO" id="2136" weight="2.0" />
+      <edge source="DAVID-GOFFIN" target="RICHARD-GASQUET" id="2137" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="MATTHEW-EBDEN" id="2138" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="FELICIANO-LOPEZ" id="2139" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="STEFANOS-TSITSIPAS" id="2140" weight="1.0" />
+      <edge source="DAVID-GOFFIN" target="ROGER-FEDERER" id="2141" weight="2.0" />
+      <edge source="DAVID-GOFFIN" target="JACK-SOCK" id="2142" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="GRIGOR-DIMITROV" id="40" weight="3.0" />
+      <edge source="RAFAEL-NADAL" target="MILOS-RAONIC" id="79" weight="2.0" />
+      <edge source="RAFAEL-NADAL" target="ALEXANDR-DOLGOPOLOV" id="148" weight="2.0" />
+      <edge source="RAFAEL-NADAL" target="ROGER-FEDERER" id="149" weight="4.0" />
+      <edge source="RAFAEL-NADAL" target="FLORIAN-MAYER" id="153" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="SAM-QUERREY" id="154" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="MARIN-CILIC" id="155" weight="2.0" />
+      <edge source="RAFAEL-NADAL" target="FERNANDO-VERDASCO" id="158" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="GUIDO-PELLA" id="159" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="JACK-SOCK" id="161" weight="2.0" />
+      <edge source="RAFAEL-NADAL" target="ALBERT-RAMOS-VINOLAS" id="165" weight="2.0" />
+      <edge source="RAFAEL-NADAL" target="DIEGO-SCHWARTZMAN" id="167" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="DOMINIC-THIEM" id="169" weight="4.0" />
+      <edge source="RAFAEL-NADAL" target="HORACIO-ZEBALLOS" id="170" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="HYEON-CHUNG" id="171" weight="2.0" />
+      <edge source="RAFAEL-NADAL" target="NOVAK-DJOKOVIC" id="174" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="NICK-KYRGIOS" id="175" weight="3.0" />
+      <edge source="RAFAEL-NADAL" target="NICOLAS-ALMAGRO" id="176" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="ROBERTO-BAUTISTA-AGUT" id="178" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="NIKOLOZ-BASILASHVILI" id="179" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="BENOIT-PAIRE" id="181" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="DONALD-YOUNG" id="184" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="RICHARD-GASQUET" id="188" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="ANDREY-RUBLEV" id="190" weight="1.0" />
+      <edge source="RAFAEL-NADAL" target="PABLO-CUEVAS" id="198" weight="1.0" />
+      <edge source="NICOLAS-ALMAGRO" target="ALEXANDR-DOLGOPOLOV" id="611" weight="1.0" />
+      <edge source="NICOLAS-ALMAGRO" target="BENOIT-PAIRE" id="1247" weight="1.0" />
+      <edge source="NICOLAS-ALMAGRO" target="RADU-ALBOT" id="1632" weight="1.0" />
+      <edge source="NICOLAS-ALMAGRO" target="NOVAK-DJOKOVIC" id="1940" weight="1.0" />
+      <edge source="NICOLAS-ALMAGRO" target="JULIEN-BENNETEAU" id="2010" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="GRIGOR-DIMITROV" id="75" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="MILOS-RAONIC" id="81" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="DIEGO-SCHWARTZMAN" id="338" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="ALEXANDR-DOLGOPOLOV" id="610" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="SAM-QUERREY" id="851" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="BENOIT-PAIRE" id="1186" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="GUIDO-PELLA" id="1189" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="FERNANDO-VERDASCO" id="1192" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="ADRIAN-MANNARINO" id="1195" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="ROGER-FEDERER" id="1196" weight="2.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="NIKOLOZ-BASILASHVILI" id="1197" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="ALBERT-RAMOS-VINOLAS" id="1198" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="IVO-KARLOVIC" id="1203" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="NOVAK-DJOKOVIC" id="1204" weight="1.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="MARIN-CILIC" id="1209" weight="2.0" />
+      <edge source="ROBERTO-BAUTISTA-AGUT" target="HYEON-CHUNG" id="1224" weight="1.0" />
+      <edge source="FLORIAN-MAYER" target="DIEGO-SCHWARTZMAN" id="351" weight="1.0" />
+      <edge source="FLORIAN-MAYER" target="FRANCES-TIAFOE" id="995" weight="1.0" />
+      <edge source="FLORIAN-MAYER" target="BENOIT-PAIRE" id="1251" weight="1.0" />
+      <edge source="FLORIAN-MAYER" target="MARIN-CILIC" id="1424" weight="3.0" />
+      <edge source="FLORIAN-MAYER" target="RADU-ALBOT" id="1646" weight="1.0" />
+      <edge source="FLORIAN-MAYER" target="HORACIO-ZEBALLOS" id="2075" weight="1.0" />
+      <edge source="FLORIAN-MAYER" target="ANDREY-KUZNETSOV" id="2307" weight="1.0" />
+      <edge source="FLORIAN-MAYER" target="ANDREY-RUBLEV" id="2437" weight="1.0" />
+      <edge source="FLORIAN-MAYER" target="SERGIY-STAKHOVSKY" id="2439" weight="1.0" />
+      <edge source="FLORIAN-MAYER" target="ROGER-FEDERER" id="2443" weight="1.0" />
+      <edge source="RICHARD-GASQUET" target="GRIGOR-DIMITROV" id="43" weight="2.0" />
+      <edge source="RICHARD-GASQUET" target="DOMINIC-THIEM" id="319" weight="1.0" />
+      <edge source="RICHARD-GASQUET" target="GILLES-SIMON" id="665" weight="1.0" />
+      <edge source="RICHARD-GASQUET" target="SAM-QUERREY" id="873" weight="1.0" />
+      <edge source="RICHARD-GASQUET" target="FRANCES-TIAFOE" id="982" weight="1.0" />
+      <edge source="RICHARD-GASQUET" target="BENOIT-PAIRE" id="1231" weight="2.0" />
+      <edge source="RICHARD-GASQUET" target="HYEON-CHUNG" id="1583" weight="1.0" />
+      <edge source="RICHARD-GASQUET" target="FELICIANO-LOPEZ" id="2708" weight="1.0" />
+      <edge source="RICHARD-GASQUET" target="ROGER-FEDERER" id="2763" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="DOMINIC-THIEM" id="321" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="PIERRE-HUGUES-HERBERT" id="808" weight="2.0" />
+      <edge source="FERNANDO-VERDASCO" target="ALBERT-RAMOS-VINOLAS" id="1344" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="STEVE-DARCIS" id="1472" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="NOVAK-DJOKOVIC" id="1930" weight="2.0" />
+      <edge source="FERNANDO-VERDASCO" target="IVO-KARLOVIC" id="1975" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="DONALD-YOUNG" id="1986" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="PABLO-CUEVAS" id="1987" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="ADRIAN-MANNARINO" id="1988" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="HORACIO-ZEBALLOS" id="1992" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="FELICIANO-LOPEZ" id="1993" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="JACK-SOCK" id="1997" weight="1.0" />
+      <edge source="FERNANDO-VERDASCO" target="ANDREY-RUBLEV" id="1998" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="MILOS-RAONIC" id="104" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="DIEGO-SCHWARTZMAN" id="325" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="ALEXANDR-DOLGOPOLOV" id="615" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="ALBERT-RAMOS-VINOLAS" id="1315" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="MARIN-CILIC" id="1410" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="RADU-ALBOT" id="1465" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="DONALD-YOUNG" id="1466" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="NIKOLOZ-BASILASHVILI" id="1467" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="DARIAN-KING" id="1468" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="ANDREY-RUBLEV" id="1475" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="GUIDO-PELLA" id="1476" weight="1.0" />
+      <edge source="STEVE-DARCIS" target="NICK-KYRGIOS" id="1479" weight="1.0" />
+      <edge source="ATTILA-BALAZS" target="ANDREY-RUBLEV" id="2853" weight="1.0" />
+      <edge source="NOVAK-DJOKOVIC" target="DOMINIC-THIEM" id="301" weight="2.0" />
+      <edge source="NOVAK-DJOKOVIC" target="DIEGO-SCHWARTZMAN" id="345" weight="1.0" />
+      <edge source="NOVAK-DJOKOVIC" target="GILLES-SIMON" id="646" weight="1.0" />
+      <edge source="NOVAK-DJOKOVIC" target="ALBERT-RAMOS-VINOLAS" id="1340" weight="1.0" />
+      <edge source="NOVAK-DJOKOVIC" target="RADEK-STEPANEK" id="1931" weight="1.0" />
+      <edge source="NOVAK-DJOKOVIC" target="HORACIO-ZEBALLOS" id="1932" weight="1.0" />
+      <edge source="NOVAK-DJOKOVIC" target="NICK-KYRGIOS" id="1935" weight="2.0" />
+      <edge source="NOVAK-DJOKOVIC" target="FELICIANO-LOPEZ" id="1939" weight="1.0" />
+      <edge source="NOVAK-DJOKOVIC" target="DONALD-YOUNG" id="1945" weight="1.0" />
+      <edge source="NOVAK-DJOKOVIC" target="ADRIAN-MANNARINO" id="1948" weight="1.0" />
+      <edge source="SAM-QUERREY" target="GRIGOR-DIMITROV" id="77" weight="1.0" />
+      <edge source="SAM-QUERREY" target="DOMINIC-THIEM" id="290" weight="2.0" />
+      <edge source="SAM-QUERREY" target="DIEGO-SCHWARTZMAN" id="323" weight="1.0" />
+      <edge source="SAM-QUERREY" target="GILLES-SIMON" id="661" weight="1.0" />
+      <edge source="SAM-QUERREY" target="NICK-KYRGIOS" id="848" weight="1.0" />
+      <edge source="SAM-QUERREY" target="DONALD-YOUNG" id="850" weight="1.0" />
+      <edge source="SAM-QUERREY" target="THOMAZ-BELLUCCI" id="853" weight="1.0" />
+      <edge source="SAM-QUERREY" target="HORACIO-ZEBALLOS" id="854" weight="1.0" />
+      <edge source="SAM-QUERREY" target="HYEON-CHUNG" id="858" weight="1.0" />
+      <edge source="SAM-QUERREY" target="MARIN-CILIC" id="861" weight="1.0" />
+      <edge source="SAM-QUERREY" target="JO-WILFRIED-TSONGA" id="863" weight="2.0" />
+      <edge source="SAM-QUERREY" target="NIKOLOZ-BASILASHVILI" id="864" weight="1.0" />
+      <edge source="SAM-QUERREY" target="ADRIAN-MANNARINO" id="870" weight="1.0" />
+      <edge source="SAM-QUERREY" target="RADU-ALBOT" id="872" weight="1.0" />
+      <edge source="SAM-QUERREY" target="FRANCES-TIAFOE" id="874" weight="1.0" />
+      <edge source="SAM-QUERREY" target="ALBERT-RAMOS-VINOLAS" id="876" weight="1.0" />
+      <edge source="GUIDO-PELLA" target="GRIGOR-DIMITROV" id="52" weight="1.0" />
+      <edge source="GUIDO-PELLA" target="DOMINIC-THIEM" id="317" weight="1.0" />
+      <edge source="GUIDO-PELLA" target="ALBERT-RAMOS-VINOLAS" id="1323" weight="2.0" />
+      <edge source="GUIDO-PELLA" target="HYEON-CHUNG" id="1568" weight="2.0" />
+      <edge source="GUIDO-PELLA" target="IVO-KARLOVIC" id="2060" weight="1.0" />
+      <edge source="GUIDO-PELLA" target="HORACIO-ZEBALLOS" id="2084" weight="1.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="DIEGO-SCHWARTZMAN" id="362" weight="1.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="GILLES-SIMON" id="642" weight="1.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="PIERRE-HUGUES-HERBERT" id="801" weight="1.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="MARIN-CILIC" id="1405" weight="1.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="ANDREY-KUZNETSOV" id="2020" weight="2.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="JACK-SOCK" id="2022" weight="1.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="STEFANOS-TSITSIPAS" id="2025" weight="1.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="NICK-KYRGIOS" id="2026" weight="1.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="ADRIAN-MANNARINO" id="2029" weight="2.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="NIKOLOZ-BASILASHVILI" id="2030" weight="1.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="IVO-KARLOVIC" id="2035" weight="1.0" />
+      <edge source="JO-WILFRIED-TSONGA" target="JULIEN-BENNETEAU" id="2041" weight="2.0" />
+      <edge source="HORACIO-ZEBALLOS" target="DOMINIC-THIEM" id="302" weight="1.0" />
+      <edge source="HORACIO-ZEBALLOS" target="ALEXANDR-DOLGOPOLOV" id="605" weight="2.0" />
+      <edge source="HORACIO-ZEBALLOS" target="BENOIT-PAIRE" id="1245" weight="1.0" />
+      <edge source="HORACIO-ZEBALLOS" target="HYEON-CHUNG" id="1582" weight="1.0" />
+      <edge source="HORACIO-ZEBALLOS" target="IVO-KARLOVIC" id="2047" weight="2.0" />
+      <edge source="HORACIO-ZEBALLOS" target="NICK-KYRGIOS" id="2080" weight="1.0" />
+      <edge source="HORACIO-ZEBALLOS" target="ADRIAN-MANNARINO" id="2088" weight="1.0" />
+      <edge source="HORACIO-ZEBALLOS" target="NIKOLOZ-BASILASHVILI" id="2091" weight="1.0" />
+      <edge source="FRANCES-TIAFOE" target="RADU-ALBOT" id="972" weight="1.0" />
+      <edge source="FRANCES-TIAFOE" target="ROGER-FEDERER" id="975" weight="3.0" />
+      <edge source="FRANCES-TIAFOE" target="THOMAZ-BELLUCCI" id="979" weight="1.0" />
+      <edge source="FRANCES-TIAFOE" target="STEFANOS-TSITSIPAS" id="989" weight="1.0" />
+      <edge source="FRANCES-TIAFOE" target="BENOIT-PAIRE" id="991" weight="1.0" />
+      <edge source="GRIGOR-DIMITROV" target="MILOS-RAONIC" id="36" weight="1.0" />
+      <edge source="GRIGOR-DIMITROV" target="DOMINIC-THIEM" id="37" weight="3.0" />
+      <edge source="GRIGOR-DIMITROV" target="HYEON-CHUNG" id="44" weight="1.0" />
+      <edge source="GRIGOR-DIMITROV" target="NIKOLOZ-BASILASHVILI" id="46" weight="1.0" />
+      <edge source="GRIGOR-DIMITROV" target="JACK-SOCK" id="50" weight="2.0" />
+      <edge source="GRIGOR-DIMITROV" target="IVO-KARLOVIC" id="55" weight="1.0" />
+      <edge source="GRIGOR-DIMITROV" target="STEPHANE-ROBERT" id="59" weight="1.0" />
+      <edge source="GRIGOR-DIMITROV" target="FELICIANO-LOPEZ" id="60" weight="2.0" />
+      <edge source="GRIGOR-DIMITROV" target="JULIEN-BENNETEAU" id="62" weight="1.0" />
+      <edge source="GRIGOR-DIMITROV" target="ROGER-FEDERER" id="64" weight="1.0" />
+      <edge source="GRIGOR-DIMITROV" target="DIEGO-SCHWARTZMAN" id="67" weight="1.0" />
+      <edge source="GRIGOR-DIMITROV" target="NICK-KYRGIOS" id="70" weight="1.0" />
+      <edge source="GRIGOR-DIMITROV" target="ANDREY-RUBLEV" id="73" weight="1.0" />
+      <edge source="IVAN-DODIG" target="DARIAN-KING" id="1003" weight="1.0" />
+      <edge source="IVAN-DODIG" target="ANDREY-RUBLEV" id="1006" weight="1.0" />
+      <edge source="DARIAN-KING" target="ALEXANDR-DOLGOPOLOV" id="612" weight="1.0" />
+      <edge source="DARIAN-KING" target="NIKOLOZ-BASILASHVILI" id="2450" weight="1.0" />
+      <edge source="DARIAN-KING" target="REILLY-OPELKA" id="2909" weight="1.0" />
+      <edge source="PAUL-HENRI-MATHIEU" target="ANDREY-RUBLEV" id="2408" weight="1.0" />
+      <edge source="PAUL-HENRI-MATHIEU" target="HENRI-LAAKSONEN" id="2413" weight="1.0" />
+      <edge source="MILOS-RAONIC" target="DIEGO-SCHWARTZMAN" id="80" weight="1.0" />
+      <edge source="MILOS-RAONIC" target="GILLES-SIMON" id="82" weight="1.0" />
+      <edge source="MILOS-RAONIC" target="JACK-SOCK" id="85" weight="2.0" />
+      <edge source="MILOS-RAONIC" target="MARIN-CILIC" id="92" weight="1.0" />
+      <edge source="MILOS-RAONIC" target="ROGER-FEDERER" id="106" weight="1.0" />
+      <edge source="MILOS-RAONIC" target="ALBERT-RAMOS-VINOLAS" id="107" weight="1.0" />
+      <edge source="MILOS-RAONIC" target="ADRIAN-MANNARINO" id="112" weight="1.0" />
+      <edge source="HYEON-CHUNG" target="FELICIANO-LOPEZ" id="1563" weight="3.0" />
+      <edge source="HYEON-CHUNG" target="DONALD-YOUNG" id="1573" weight="1.0" />
+      <edge source="HYEON-CHUNG" target="ADRIAN-MANNARINO" id="1577" weight="1.0" />
+      <edge source="HYEON-CHUNG" target="JULIEN-BENNETEAU" id="1579" weight="1.0" />
+      <edge source="HYEON-CHUNG" target="ANDREY-RUBLEV" id="1580" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="GILLES-SIMON" id="643" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="PIERRE-HUGUES-HERBERT" id="827" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="MARIN-CILIC" id="1432" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="ANDREY-KUZNETSOV" id="2298" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="NIKOLOZ-BASILASHVILI" id="2466" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="EVGENY-DONSKOY" id="2556" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="JACK-SOCK" id="2685" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="FELICIANO-LOPEZ" id="2701" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="DONALD-YOUNG" id="2889" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="SERGIY-STAKHOVSKY" id="2998" weight="1.0" />
+      <edge source="JULIEN-BENNETEAU" target="HENRI-LAAKSONEN" id="3000" weight="1.0" />
+      <edge source="ADRIAN-MANNARINO" target="DOMINIC-THIEM" id="291" weight="3.0" />
+      <edge source="ADRIAN-MANNARINO" target="MARIN-CILIC" id="1427" weight="1.0" />
+      <edge source="ADRIAN-MANNARINO" target="NIKOLOZ-BASILASHVILI" id="2447" weight="1.0" />
+      <edge source="ADRIAN-MANNARINO" target="PABLO-CUEVAS" id="2581" weight="1.0" />
+      <edge source="ADRIAN-MANNARINO" target="FELICIANO-LOPEZ" id="2704" weight="1.0" />
+      <edge source="ADRIAN-MANNARINO" target="DONALD-YOUNG" id="2719" weight="1.0" />
+      <edge source="ADRIAN-MANNARINO" target="ROGER-FEDERER" id="2736" weight="1.0" />
+      <edge source="NIKOLOZ-BASILASHVILI" target="DOMINIC-THIEM" id="281" weight="1.0" />
+      <edge source="NIKOLOZ-BASILASHVILI" target="GILLES-SIMON" id="654" weight="1.0" />
+      <edge source="NIKOLOZ-BASILASHVILI" target="BENOIT-PAIRE" id="1259" weight="1.0" />
+      <edge source="NIKOLOZ-BASILASHVILI" target="IVO-KARLOVIC" id="2049" weight="1.0" />
+      <edge source="NIKOLOZ-BASILASHVILI" target="MATTHEW-EBDEN" id="2448" weight="2.0" />
+      <edge source="NIKOLOZ-BASILASHVILI" target="NICK-KYRGIOS" id="2463" weight="1.0" />
+      <edge source="NIKOLOZ-BASILASHVILI" target="SERGIY-STAKHOVSKY" id="2467" weight="1.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="PABLO-CUEVAS" id="603" weight="1.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="MARIN-CILIC" id="606" weight="1.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="ROGER-FEDERER" id="616" weight="2.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="ANDREY-KUZNETSOV" id="617" weight="1.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="THOMAZ-BELLUCCI" id="621" weight="1.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="NICK-KYRGIOS" id="622" weight="1.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="REILLY-OPELKA" id="625" weight="1.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="SERGIY-STAKHOVSKY" id="631" weight="1.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="FELICIANO-LOPEZ" id="635" weight="1.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="JACK-SOCK" id="636" weight="1.0" />
+      <edge source="ALEXANDR-DOLGOPOLOV" target="HENRI-LAAKSONEN" id="638" weight="1.0" />
+      <edge source="BENOIT-PAIRE" target="DOMINIC-THIEM" id="279" weight="1.0" />
+      <edge source="BENOIT-PAIRE" target="PIERRE-HUGUES-HERBERT" id="821" weight="1.0" />
+      <edge source="BENOIT-PAIRE" target="FELICIANO-LOPEZ" id="1233" weight="1.0" />
+      <edge source="BENOIT-PAIRE" target="MARIN-CILIC" id="1235" weight="1.0" />
+      <edge source="BENOIT-PAIRE" target="ROGER-FEDERER" id="1236" weight="2.0" />
+      <edge source="BENOIT-PAIRE" target="DONALD-YOUNG" id="1238" weight="2.0" />
+      <edge source="BENOIT-PAIRE" target="PABLO-CUEVAS" id="1239" weight="2.0" />
+      <edge source="BENOIT-PAIRE" target="RADU-ALBOT" id="1243" weight="1.0" />
+      <edge source="BENOIT-PAIRE" target="STEFANOS-TSITSIPAS" id="1261" weight="1.0" />
+      <edge source="REILLY-OPELKA" target="DIEGO-SCHWARTZMAN" id="354" weight="1.0" />
+      <edge source="REILLY-OPELKA" target="RADU-ALBOT" id="1645" weight="1.0" />
+      <edge source="REILLY-OPELKA" target="DONALD-YOUNG" id="2883" weight="1.0" />
+      <edge source="THOMAZ-BELLUCCI" target="DIEGO-SCHWARTZMAN" id="331" weight="1.0" />
+      <edge source="THOMAZ-BELLUCCI" target="PIERRE-HUGUES-HERBERT" id="809" weight="1.0" />
+      <edge source="THOMAZ-BELLUCCI" target="STEPHANE-ROBERT" id="838" weight="1.0" />
+      <edge source="THOMAZ-BELLUCCI" target="ANDREY-KUZNETSOV" id="2303" weight="1.0" />
+      <edge source="THOMAZ-BELLUCCI" target="EVGENY-DONSKOY" id="2555" weight="1.0" />
+      <edge source="THOMAZ-BELLUCCI" target="PABLO-CUEVAS" id="2580" weight="1.0" />
+      <edge source="THOMAZ-BELLUCCI" target="HENRI-LAAKSONEN" id="2649" weight="1.0" />
+      <edge source="ALBERT-RAMOS-VINOLAS" target="DOMINIC-THIEM" id="286" weight="1.0" />
+      <edge source="ALBERT-RAMOS-VINOLAS" target="DIEGO-SCHWARTZMAN" id="343" weight="1.0" />
+      <edge source="ALBERT-RAMOS-VINOLAS" target="STEPHANE-ROBERT" id="834" weight="1.0" />
+      <edge source="ALBERT-RAMOS-VINOLAS" target="PABLO-CUEVAS" id="1326" weight="2.0" />
+      <edge source="ALBERT-RAMOS-VINOLAS" target="MARIN-CILIC" id="1333" weight="2.0" />
+      <edge source="ALBERT-RAMOS-VINOLAS" target="ANDREY-KUZNETSOV" id="1339" weight="1.0" />
+      <edge source="ALBERT-RAMOS-VINOLAS" target="ANDREY-RUBLEV" id="1343" weight="2.0" />
+      <edge source="STEFANOS-TSITSIPAS" target="DIEGO-SCHWARTZMAN" id="363" weight="1.0" />
+      <edge source="STEFANOS-TSITSIPAS" target="MARIN-CILIC" id="1429" weight="1.0" />
+      <edge source="STEFANOS-TSITSIPAS" target="IVO-KARLOVIC" id="2053" weight="2.0" />
+      <edge source="STEFANOS-TSITSIPAS" target="PABLO-CUEVAS" id="2586" weight="1.0" />
+      <edge source="DONALD-YOUNG" target="DIEGO-SCHWARTZMAN" id="360" weight="1.0" />
+      <edge source="DONALD-YOUNG" target="MARIN-CILIC" id="1422" weight="1.0" />
+      <edge source="DONALD-YOUNG" target="IVO-KARLOVIC" id="2050" weight="1.0" />
+      <edge source="DONALD-YOUNG" target="JACK-SOCK" id="2673" weight="1.0" />
+      <edge source="DONALD-YOUNG" target="NICK-KYRGIOS" id="2859" weight="2.0" />
+      <edge source="PIERRE-HUGUES-HERBERT" target="DOMINIC-THIEM" id="282" weight="1.0" />
+      <edge source="PIERRE-HUGUES-HERBERT" target="JACK-SOCK" id="800" weight="2.0" />
+      <edge source="PIERRE-HUGUES-HERBERT" target="EVGENY-DONSKOY" id="804" weight="1.0" />
+      <edge source="PIERRE-HUGUES-HERBERT" target="FELICIANO-LOPEZ" id="805" weight="2.0" />
+      <edge source="PIERRE-HUGUES-HERBERT" target="NICK-KYRGIOS" id="822" weight="1.0" />
+      <edge source="RADU-ALBOT" target="JACK-SOCK" id="1626" weight="1.0" />
+      <edge source="RADU-ALBOT" target="SERGIY-STAKHOVSKY" id="1631" weight="1.0" />
+      <edge source="ANDREY-KUZNETSOV" target="DIEGO-SCHWARTZMAN" id="349" weight="1.0" />
+      <edge source="ANDREY-KUZNETSOV" target="IVO-KARLOVIC" id="2052" weight="1.0" />
+      <edge source="ANDREY-KUZNETSOV" target="PABLO-CUEVAS" id="2308" weight="1.0" />
+      <edge source="ANDREY-KUZNETSOV" target="FELICIANO-LOPEZ" id="2310" weight="1.0" />
+      <edge source="PABLO-CUEVAS" target="DOMINIC-THIEM" id="299" weight="2.0" />
+      <edge source="PABLO-CUEVAS" target="DIEGO-SCHWARTZMAN" id="326" weight="2.0" />
+      <edge source="PABLO-CUEVAS" target="HENRI-LAAKSONEN" id="2583" weight="1.0" />
+      <edge source="ROGER-FEDERER" target="DIEGO-SCHWARTZMAN" id="361" weight="1.0" />
+      <edge source="ROGER-FEDERER" target="STEPHANE-ROBERT" id="836" weight="1.0" />
+      <edge source="ROGER-FEDERER" target="MARIN-CILIC" id="1423" weight="2.0" />
+      <edge source="ROGER-FEDERER" target="EVGENY-DONSKOY" id="2548" weight="1.0" />
+      <edge source="ROGER-FEDERER" target="JACK-SOCK" id="2674" weight="2.0" />
+      <edge source="ROGER-FEDERER" target="FELICIANO-LOPEZ" id="2707" weight="1.0" />
+      <edge source="ROGER-FEDERER" target="NICK-KYRGIOS" id="2757" weight="2.0" />
+      <edge source="NICK-KYRGIOS" target="IVO-KARLOVIC" id="2051" weight="2.0" />
+      <edge source="MARIN-CILIC" target="DIEGO-SCHWARTZMAN" id="341" weight="2.0" />
+      <edge source="MARIN-CILIC" target="FELICIANO-LOPEZ" id="1416" weight="2.0" />
+      <edge source="MARIN-CILIC" target="IVO-KARLOVIC" id="1419" weight="1.0" />
+      <edge source="MARIN-CILIC" target="JACK-SOCK" id="1433" weight="1.0" />
+      <edge source="EVGENY-DONSKOY" target="MATTHEW-EBDEN" id="2541" weight="1.0" />
+      <edge source="DOMINIC-THIEM" target="GILLES-SIMON" id="283" weight="3.0" />
+      <edge source="DOMINIC-THIEM" target="DIEGO-SCHWARTZMAN" id="287" weight="2.0" />
+      <edge source="DOMINIC-THIEM" target="HENRI-LAAKSONEN" id="311" weight="1.0" />
+      <edge source="DOMINIC-THIEM" target="ANDREY-RUBLEV" id="320" weight="1.0" />
+      <edge source="HENRI-LAAKSONEN" target="JACK-SOCK" id="2675" weight="1.0" />
+      <edge source="MATTHEW-EBDEN" target="IVO-KARLOVIC" id="2058" weight="1.0" />
+      <edge source="MATTHEW-EBDEN" target="FELICIANO-LOPEZ" id="2706" weight="1.0" />
+      <edge source="ANDREY-RUBLEV" target="DIEGO-SCHWARTZMAN" id="347" weight="1.0" />
+      <edge source="ANDREY-RUBLEV" target="JACK-SOCK" id="2683" weight="1.0" />
+      <edge source="FELICIANO-LOPEZ" target="GILLES-SIMON" id="649" weight="2.0" />
+      <edge source="FELICIANO-LOPEZ" target="IVO-KARLOVIC" id="2059" weight="1.0" />
+      <edge source="FELICIANO-LOPEZ" target="JACK-SOCK" id="2676" weight="1.0" />
+      <edge source="JACK-SOCK" target="DIEGO-SCHWARTZMAN" id="344" weight="1.0" />
+    </edges>
+  </graph>
+</gexf>

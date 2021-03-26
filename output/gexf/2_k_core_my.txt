@@ -1,0 +1,12 @@
+gexf file: output/gexf/2_k_core_k_19_nx.gexf 
+order: 77 
+size: 1058 
+density: 0.361586 
+diameter:2 
+radius: 2 
+average path length: 1.638414 
+average clustering coefficient: 0.094990 
+transitivity: 0.384953 
+number of triangle: 3771 
+number of clique: 1575 
+number of component: 1 

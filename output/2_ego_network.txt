@@ -1,0 +1,12 @@
+gexf file: output/gexf/2_ego_network_DAVID-GOFFIN.gexf 
+order: 56 
+size: 413 
+density: 0.268182 
+diameter:2 
+radius: 1 
+average path length: 1.731818 
+average clustering coefficient: 0.112707 
+transitivity: 0.393712 
+number of triangle: 981 
+number of clique: 264 
+number of component: 1 
