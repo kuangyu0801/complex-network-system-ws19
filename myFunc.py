@@ -64,7 +64,7 @@ def my_PrintOutFile(f_output_file_name):
 
 
 def my_PrintTag(tag_PR, tag_ALGO):
-    print('========[PR:' + tag_PR + '][ALGO:' + tag_ALGO + ']  RESULT: SUCCESS========')
+    print('========[project-requirement:' + tag_PR + '][ALGO:' + tag_ALGO + ']  RESULT: SUCCESS========')
 
 
 def my_csv2dict(fin_csv):
