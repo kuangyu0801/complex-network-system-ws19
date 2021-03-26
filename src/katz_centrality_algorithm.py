@@ -2,9 +2,7 @@
 # excluding 0.0 and 1/𝜆1. As for beta, set it first to 0.2, then to 0.5, and then
 # to 1.
 
-import networkx as nx
-from myFunc import *
-import numpy
+from src.myFunc import *
 
 
 def my_katz(fin_gexf, fout_top10_csv_name, fout_gexf_name):

@@ -1,7 +1,5 @@
-import networkx as nx
-from myFunc import *
-from clustering_algorithm import *
-from degree_distribution_algorithm import *
+from src.clustering_algorithm import *
+from src.degree_distribution_algorithm import *
 
 
 def my_randomgraph(fin_gexf, fout_gexf_name):

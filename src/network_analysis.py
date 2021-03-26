@@ -1,21 +1,7 @@
 # Main python program: network_analysis.py
 # TODO [PR0] making this the main program
 
-from smallworld_algorithm import *
-from clustering_algorithm import *
-from max_clique_algorithm import *
-from property_analyze import *
-from egocentric_network_algorithm import *
-from distance_distribution_algorithm import *
-from k_core_algorithm import *
-from random_graph_algorithm import *
-from preferential_attachment_algorithm import *
-from pagerank_algorithm import *
-from katz_centrality_algorithm import *
-from harmonic_centrality_algorithm import *
-from degree_centrality_algorithm import *
-from eigen_centrality_algorithm import *
-from betweeness_centrality_algorithm import *
+from src.betweeness_centrality_algorithm import *
 
 
 #TODO making this a interactive on terminal so we won't always executing whole function

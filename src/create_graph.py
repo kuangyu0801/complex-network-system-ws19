@@ -1,6 +1,4 @@
-import csv
-import networkx as nx
-from myFunc import *
+from src.myFunc import *
 
 fTag = 'CREATE GRAPH'
 

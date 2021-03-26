@@ -1,6 +1,5 @@
 # implementation of eigen centrality algorithm
-import networkx as nx
-from myFunc import *
+from src.myFunc import *
 
 
 def my_eigen(fin_gexf, fout_csv_name, fout_gexf_name):

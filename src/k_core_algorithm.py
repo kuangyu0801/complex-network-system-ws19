@@ -1,5 +1,4 @@
-import networkx as nx
-from myFunc import *
+from src.myFunc import *
 
 
 def my_kcore(fin_gexf, fout_nx_gexf_name, fout_my_gexf_name):

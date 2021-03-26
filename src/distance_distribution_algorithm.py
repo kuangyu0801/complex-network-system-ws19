@@ -1,6 +1,4 @@
-import csv
-import networkx as nx
-from myFunc import *
+from src.myFunc import *
 
 
 def my_distance_dist(fin_gexf, fout_csv, fout_png_name):

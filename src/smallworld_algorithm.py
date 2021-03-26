@@ -1,6 +1,5 @@
-from myFunc import *
-from clustering_algorithm import *
-from degree_distribution_algorithm import *
+from src.clustering_algorithm import *
+from src.degree_distribution_algorithm import *
 
 
 def my_smallworld(node_size, k_link, p_prob):

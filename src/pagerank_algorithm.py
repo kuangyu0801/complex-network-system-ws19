@@ -1,8 +1,6 @@
 # Compute the PageRank for all nodes of your network
 
-import networkx as nx
-from myFunc import *
-import numpy
+from src.myFunc import *
 
 
 def my_pagerank(fin_gexf, fout_top10_csv_name, fout_gexf_name):

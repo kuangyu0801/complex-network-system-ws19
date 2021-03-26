@@ -1,6 +1,4 @@
-import csv
-import networkx as nx
-from myFunc import *
+from src.myFunc import *
 
 
 def my_degreedist(fin_gexf, tag_PR):

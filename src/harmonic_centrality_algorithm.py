@@ -1,7 +1,5 @@
 #  implementation of harmonic centrality algorithm
-import networkx as nx
-import csv
-from myFunc import *
+from src.myFunc import *
 
 
 def my_harmonic(fin_gexf, fout_csv_name, fout_gexf_name):

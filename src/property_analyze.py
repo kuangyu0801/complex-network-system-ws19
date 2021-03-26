@@ -1,5 +1,4 @@
-import networkx as nx
-from myFunc import *
+from src.myFunc import *
 # reading from a undirected graph
 
 

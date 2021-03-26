@@ -1,4 +1,4 @@
-from myFunc import *
+from src.myFunc import *
 
 
 def my_maxclique(fin_gexf, fout_gexf):

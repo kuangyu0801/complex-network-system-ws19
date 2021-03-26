@@ -1,4 +1,4 @@
-from myFunc import *
+from src.myFunc import *
 
 
 def my_egonetwork(G, fout_gexf, most_node):

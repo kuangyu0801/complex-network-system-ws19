@@ -1,5 +1,4 @@
-import networkx as nx
-from myFunc import *
+from src.myFunc import *
 
 
 def my_betweeness(fin_gexf, fout_csv_name, fout_gexf_name):
